@@ -1,2 +1,2 @@
-# mecagenial.github.io
+# Meca Genial
 Site oficial do projeto Meca Genial
