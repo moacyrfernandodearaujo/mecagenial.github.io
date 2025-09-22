@@ -51,18 +51,13 @@
       gap: 1rem;
     }
 
-    .logo-placeholder {
+    .logo-image {
       width: 80px;
       height: 80px;
-      background-color: var(--white);
       border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--primary-color);
-      font-weight: bold;
-      font-size: 0.8rem;
-      text-align: center;
+      object-fit: contain;
+      background-color: var(--white);
+      padding: 5px;
     }
 
     /* Navigation */
@@ -338,7 +333,7 @@
   <header>
     <div class="header-container">
       <div class="logo-container">
-        <div class="logo-placeholder">logo.png</div>
+        <img src="logo.png" alt="Logo Meca Genial" class="logo-image">
         <h1>Complexo Industrial Educacional Sustentável</h1>
       </div>
       <div id="google_translate_element"></div>
