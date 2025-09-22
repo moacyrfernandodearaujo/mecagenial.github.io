@@ -171,6 +171,313 @@
       margin-bottom: 1rem;
     }
 
+    /* Vista em Perspectiva */
+    .perspective-container {
+      margin: 2rem 0;
+      background: linear-gradient(to bottom, #8BC34A, #4CAF50);
+      border-radius: 10px;
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+      min-height: 500px;
+    }
+
+    .perspective-view {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      margin: 20px 0;
+      perspective: 1000px;
+      overflow: hidden;
+      border-radius: 10px;
+      background: linear-gradient(to bottom, #8BC34A, #4CAF50);
+    }
+
+    .city-container {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transform: rotateX(60deg) rotateZ(-30deg) scale(0.8);
+      transition: transform 0.5s;
+    }
+
+    .city-element {
+      position: absolute;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      transform-style: preserve-3d;
+      transition: all 0.3s;
+      font-size: 0.8rem;
+      padding: 5px;
+    }
+
+    .city-element:hover {
+      transform: translateZ(20px);
+      z-index: 10;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    .factory {
+      background: linear-gradient(to bottom, #78909C, #546E7A);
+      width: 150px;
+      height: 80px;
+      bottom: 80px;
+      left: 120px;
+    }
+
+    .school {
+      background: linear-gradient(to bottom, #5C6BC0, #3949AB);
+      width: 140px;
+      height: 70px;
+      bottom: 80px;
+      right: 150px;
+    }
+
+    .dormitories {
+      background: linear-gradient(to bottom, #FFB74D, #F57C00);
+      width: 160px;
+      height: 60px;
+      bottom: 180px;
+      left: 300px;
+    }
+
+    .dining {
+      background: linear-gradient(to bottom, #E57373, #D32F2F);
+      width: 100px;
+      height: 60px;
+      bottom: 250px;
+      left: 220px;
+    }
+
+    .research {
+      background: linear-gradient(to bottom, #4DB6AC, #00796B);
+      width: 120px;
+      height: 70px;
+      bottom: 150px;
+      left: 450px;
+    }
+
+    .solar-farm {
+      background: linear-gradient(to bottom, #FFD54F, #FFA000);
+      width: 180px;
+      height: 50px;
+      bottom: 300px;
+      right: 80px;
+    }
+
+    .wind-turbine {
+      position: absolute;
+      width: 15px;
+      height: 70px;
+      background: #BDBDBD;
+      bottom: 80px;
+    }
+
+    .wind-turbine::after {
+      content: '';
+      position: absolute;
+      top: -30px;
+      left: -20px;
+      width: 55px;
+      height: 55px;
+      background: #90A4AE;
+      border-radius: 50%;
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      transform: rotate(120deg);
+    }
+
+    .turbine-1 {
+      left: 550px;
+    }
+
+    .turbine-2 {
+      left: 570px;
+    }
+
+    .turbine-3 {
+      left: 590px;
+    }
+
+    .greenhouse {
+      background: linear-gradient(to bottom, #81C784, #388E3C);
+      width: 120px;
+      height: 70px;
+      bottom: 220px;
+      right: 300px;
+    }
+
+    .lake {
+      background: linear-gradient(to bottom, #4FC3F7, #0288D1);
+      width: 140px;
+      height: 80px;
+      border-radius: 50%;
+      bottom: 120px;
+      right: 380px;
+      opacity: 0.8;
+    }
+
+    .sports {
+      background: linear-gradient(to bottom, #BA68C8, #7B1FA2);
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      bottom: 270px;
+      left: 120px;
+    }
+
+    .road {
+      position: absolute;
+      background: #5D4037;
+      height: 15px;
+      bottom: 60px;
+      left: 0;
+      right: 0;
+    }
+
+    .road::before, .road::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      background: repeating-linear-gradient(
+        to right,
+        #FFC107 0%,
+        #FFC107 10%,
+        transparent 10%,
+        transparent 20%
+      );
+      top: 6px;
+    }
+
+    .road-horizontal {
+      width: 100%;
+    }
+
+    .road-vertical {
+      width: 15px;
+      height: 220px;
+      left: 380px;
+      bottom: 60px;
+    }
+
+    .road-vertical::before, .road-vertical::after {
+      width: 3px;
+      height: 220px;
+      background: repeating-linear-gradient(
+        to bottom,
+        #FFC107 0%,
+        #FFC107 10%,
+        transparent 10%,
+        transparent 20%
+      );
+      left: 6px;
+      top: 0;
+    }
+
+    .electric-car {
+      position: absolute;
+      width: 25px;
+      height: 12px;
+      background: #E53935;
+      border-radius: 4px;
+      bottom: 70px;
+      left: 150px;
+      animation: drive 10s linear infinite;
+    }
+
+    .electric-car::before {
+      content: '';
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: #90A4AE;
+      border-radius: 50%;
+      top: -4px;
+      left: 4px;
+    }
+
+    @keyframes drive {
+      0% { left: -40px; }
+      100% { left: 110%; }
+    }
+
+    .tree {
+      position: absolute;
+      width: 15px;
+      height: 30px;
+      background: #5D4037;
+      bottom: 60px;
+    }
+
+    .tree::after {
+      content: '';
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background: #388E3C;
+      border-radius: 50%;
+      bottom: 20px;
+      left: -7px;
+    }
+
+    .tree-1 { left: 40px; }
+    .tree-2 { left: 280px; }
+    .tree-3 { left: 650px; }
+    .tree-4 { left: 720px; }
+    .tree-5 { left: 800px; }
+
+    .perspective-controls {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .perspective-btn {
+      background: var(--green-color);
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      margin: 0 5px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: background 0.3s;
+    }
+
+    .perspective-btn:hover {
+      background: var(--accent-color);
+    }
+
+    .perspective-legend {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+      margin-top: 20px;
+      padding: 15px;
+      background: #f5f5f5;
+      border-radius: 8px;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+    }
+
+    .color-box {
+      width: 15px;
+      height: 15px;
+      margin-right: 8px;
+      border-radius: 3px;
+    }
+
     /* Gallery */
     .gallery-grid {
       display: grid;
@@ -245,22 +552,6 @@
       background: var(--accent-color);
     }
 
-    /* Timeline */
-    .timeline {
-      position: relative;
-      max-width: 800px;
-      margin: 2rem auto;
-    }
-
-    .timeline-item {
-      padding: 1rem 2rem;
-      margin: 2rem 0;
-      background: var(--light-bg);
-      border-radius: 8px;
-      position: relative;
-      border-left: 4px solid var(--green-color);
-    }
-
     /* Footer */
     footer {
       background-color: var(--primary-color);
@@ -325,6 +616,18 @@
       .features-grid {
         grid-template-columns: 1fr;
       }
+      
+      .perspective-view {
+        height: 300px;
+      }
+      
+      .city-element {
+        font-size: 0.7rem;
+      }
+      
+      .perspective-legend {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -347,6 +650,7 @@
         <li><a href="#inicio" class="nav-link active" data-section="inicio">Início</a></li>
         <li><a href="#visao" class="nav-link" data-section="visao">Visão do Complexo</a></li>
         <li><a href="#estrutura" class="nav-link" data-section="estrutura">Estrutura</a></li>
+        <li><a href="#vista" class="nav-link" data-section="vista">Vista em Perspectiva</a></li>
         <li><a href="#projetos" class="nav-link" data-section="projetos">Nossos Projetos</a></li>
         <li><a href="#sustentabilidade" class="nav-link" data-section="sustentabilidade">Sustentabilidade</a></li>
         <li><a href="#intercambio" class="nav-link" data-section="intercambio">Intercâmbio</a></li>
@@ -452,6 +756,119 @@
             <li>Transporte elétrico interno</li>
           </ul>
         </div>
+      </div>
+    </section>
+
+    <!-- Vista em Perspectiva Section -->
+    <section id="vista" class="section">
+      <h2>Vista em Perspectiva do Complexo</h2>
+      <p>Explore visualmente como todos os elementos do complexo se integram harmoniosamente em um ecossistema sustentável.</p>
+      
+      <div class="perspective-container">
+        <div class="perspective-controls">
+          <button class="perspective-btn" onclick="rotateView('left')">↶ Girar para Esquerda</button>
+          <button class="perspective-btn" onclick="rotateView('reset')">⟲ Resetar Vista</button>
+          <button class="perspective-btn" onclick="rotateView('right')">↷ Girar para Direita</button>
+        </div>
+        
+        <div class="perspective-view">
+          <div class="city-container" id="cityView">
+            <!-- Estradas -->
+            <div class="road road-horizontal"></div>
+            <div class="road road-vertical"></div>
+            
+            <!-- Árvores -->
+            <div class="tree tree-1"></div>
+            <div class="tree tree-2"></div>
+            <div class="tree tree-3"></div>
+            <div class="tree tree-4"></div>
+            <div class="tree tree-5"></div>
+            
+            <!-- Elementos do complexo -->
+            <div class="city-element factory" title="Fábrica Principal">
+              <span>🏭 Fábrica</span>
+            </div>
+            
+            <div class="city-element school" title="Escola Técnica">
+              <span>🏫 Escola</span>
+            </div>
+            
+            <div class="city-element dormitories" title="Alojamentos">
+              <span>🏘️ Alojamentos</span>
+            </div>
+            
+            <div class="city-element dining" title="Refeitórios">
+              <span>🍽️ Refeitório</span>
+            </div>
+            
+            <div class="city-element research" title="Centro de Pesquisa">
+              <span>🔬 Pesquisa</span>
+            </div>
+            
+            <div class="city-element solar-farm" title="Fazenda Solar">
+              <span>☀️ Energia Solar</span>
+            </div>
+            
+            <div class="wind-turbine turbine-1"></div>
+            <div class="wind-turbine turbine-2"></div>
+            <div class="wind-turbine turbine-3"></div>
+            
+            <div class="city-element greenhouse" title="Estufas e Horta">
+              <span>🌿 Horta</span>
+            </div>
+            
+            <div class="city-element lake" title="Lago Artificial">
+              <span>💧 Lago</span>
+            </div>
+            
+            <div class="city-element sports" title="Área Esportiva">
+              <span>⚽ Esportes</span>
+            </div>
+            
+            <!-- Veículo elétrico -->
+            <div class="electric-car"></div>
+          </div>
+        </div>
+        
+        <div class="perspective-legend">
+          <div class="legend-item">
+            <div class="color-box" style="background: #546E7A;"></div>
+            <span>Fábricas e Oficinas</span>
+          </div>
+          <div class="legend-item">
+            <div class="color-box" style="background: #3949AB;"></div>
+            <span>Escola Técnica</span>
+          </div>
+          <div class="legend-item">
+            <div class="color-box" style="background: #F57C00;"></div>
+            <span>Alojamentos</span>
+          </div>
+          <div class="legend-item">
+            <div class="color-box" style="background: #D32F2F;"></div>
+            <span>Refeitórios</span>
+          </div>
+          <div class="legend-item">
+            <div class="color-box" style="background: #00796B;"></div>
+            <span>Centro de Pesquisa</span>
+          </div>
+          <div class="legend-item">
+            <div class="color-box" style="background: #FFA000;"></div>
+            <span>Energia Solar</span>
+          </div>
+          <div class="legend-item">
+            <div class="color-box" style="background: #388E3C;"></div>
+            <span>Áreas Verdes</span>
+          </div>
+          <div class="legend-item">
+            <div class="color-box" style="background: #0288D1;"></div>
+            <span>Gestão Hídrica</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="feature-card" style="margin-top: 2rem;">
+        <h3>🌍 Integração Total</h3>
+        <p>Esta vista demonstra como todos os componentes do complexo se interconectam formando um ecossistema coeso onde educação, produção industrial e sustentabilidade coexistem harmonicamente. O design prioriza a eficiência energética, a circulação otimizada de pessoas e recursos, e a integração com o ambiente natural.</p>
       </div>
     </section>
 
@@ -629,8 +1046,8 @@
       
       <div>
         <h3>Contato</h3>
-        <p>Email: moacyr.araujo@fatec.sp.gov.br</p>
-        <p>Telefone: +55(11) 949187855</p>
+        <p>Email: partnerships@complexoindustrial.edu.br</p>
+        <p>Telefone: (XX) XXXX-XXXX</p>
       </div>
       
       <div>
@@ -677,6 +1094,17 @@
           this.reset();
         });
       }
+      
+      // Adicionar interação de hover para mostrar detalhes na vista
+      document.querySelectorAll('.city-element').forEach(element => {
+        element.addEventListener('mouseenter', function() {
+          this.style.zIndex = '100';
+        });
+        
+        element.addEventListener('mouseleave', function() {
+          this.style.zIndex = '1';
+        });
+      });
     });
     
     // Google Translate
@@ -687,9 +1115,25 @@
         layout: google.translate.TranslateElement.InlineLayout.SIMPLE
       }, 'google_translate_element');
     }
+    
+    // Vista em Perspectiva - Controles de rotação
+    let rotationZ = -30;
+    
+    function rotateView(direction) {
+      const cityView = document.getElementById('cityView');
+      
+      if (direction === 'left') {
+        rotationZ -= 15;
+      } else if (direction === 'right') {
+        rotationZ += 15;
+      } else {
+        rotationZ = -30;
+      }
+      
+      cityView.style.transform = `rotateX(60deg) rotateZ(${rotationZ}deg) scale(0.8)`;
+    }
   </script>
   
   <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
-
