@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fábrica Escola Meca Genial</title>
+  <title>Complexo Industrial Educacional Sustentável - Meca Genial</title>
   <style>
     :root {
       --primary-color: #004080;
       --secondary-color: #ffcc00;
       --accent-color: #0066cc;
+      --green-color: #2e7d32;
       --text-color: #333;
       --light-bg: #f0f4f8;
       --white: #ffffff;
@@ -29,7 +30,7 @@
 
     /* Header */
     header {
-      background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+      background: linear-gradient(135deg, var(--primary-color), var(--green-color));
       color: var(--white);
       padding: 1rem 0;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -83,6 +84,7 @@
     .nav-menu {
       display: flex;
       list-style: none;
+      flex-wrap: wrap;
     }
 
     .nav-menu li {
@@ -100,11 +102,11 @@
 
     .nav-menu a:hover {
       background-color: var(--light-bg);
-      color: var(--accent-color);
+      color: var(--green-color);
     }
 
     .nav-menu a.active {
-      background-color: var(--primary-color);
+      background-color: var(--green-color);
       color: var(--white);
     }
 
@@ -137,7 +139,7 @@
     .hero {
       text-align: center;
       padding: 3rem 2rem;
-      background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+      background: linear-gradient(135deg, var(--primary-color), var(--green-color));
       color: var(--white);
       border-radius: 10px;
       margin-bottom: 2rem;
@@ -152,6 +154,26 @@
       font-size: 1.2rem;
       max-width: 800px;
       margin: 0 auto;
+    }
+
+    /* Features Grid */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .feature-card {
+      background: var(--light-bg);
+      padding: 1.5rem;
+      border-radius: 8px;
+      border-left: 4px solid var(--green-color);
+    }
+
+    .feature-card h3 {
+      color: var(--green-color);
+      margin-bottom: 1rem;
     }
 
     /* Gallery */
@@ -200,7 +222,8 @@
     }
 
     .form-group input,
-    .form-group textarea {
+    .form-group textarea,
+    .form-group select {
       padding: 0.75rem;
       border: 1px solid #ddd;
       border-radius: 5px;
@@ -213,7 +236,7 @@
     }
 
     .btn {
-      background: var(--primary-color);
+      background: var(--green-color);
       color: var(--white);
       border: none;
       padding: 0.75rem 2rem;
@@ -225,6 +248,22 @@
 
     .btn:hover {
       background: var(--accent-color);
+    }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 2rem auto;
+    }
+
+    .timeline-item {
+      padding: 1rem 2rem;
+      margin: 2rem 0;
+      background: var(--light-bg);
+      border-radius: 8px;
+      position: relative;
+      border-left: 4px solid var(--green-color);
     }
 
     /* Footer */
@@ -287,6 +326,10 @@
       .gallery-grid {
         grid-template-columns: 1fr;
       }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -296,7 +339,7 @@
     <div class="header-container">
       <div class="logo-container">
         <div class="logo-placeholder">logo.png</div>
-        <h1>Fábrica Escola Meca Genial</h1>
+        <h1>Complexo Industrial Educacional Sustentável</h1>
       </div>
       <div id="google_translate_element"></div>
     </div>
@@ -307,11 +350,13 @@
     <div class="nav-container">
       <ul class="nav-menu">
         <li><a href="#inicio" class="nav-link active" data-section="inicio">Início</a></li>
-        <li><a href="#sobre" class="nav-link" data-section="sobre">Sobre o Projeto</a></li>
-        <li><a href="#galeria" class="nav-link" data-section="galeria">Galeria</a></li>
+        <li><a href="#visao" class="nav-link" data-section="visao">Visão do Complexo</a></li>
+        <li><a href="#estrutura" class="nav-link" data-section="estrutura">Estrutura</a></li>
         <li><a href="#projetos" class="nav-link" data-section="projetos">Nossos Projetos</a></li>
+        <li><a href="#sustentabilidade" class="nav-link" data-section="sustentabilidade">Sustentabilidade</a></li>
+        <li><a href="#intercambio" class="nav-link" data-section="intercambio">Intercâmbio</a></li>
+        <li><a href="#carreiras" class="nav-link" data-section="carreiras">Carreiras</a></li>
         <li><a href="#contato" class="nav-link" data-section="contato">Contato</a></li>
-        <li><a href="#patrocinio" class="nav-link" data-section="patrocinio">Patrocínio</a></li>
       </ul>
     </div>
   </nav>
@@ -320,77 +365,232 @@
   <main>
     <!-- Hero Section -->
     <section class="hero">
-      <h1>Bem-vindo à Fábrica Escola Meca Genial</h1>
-      <p>Promovendo educação tecnológica e inovação através da construção de dispositivos mecânicos e eletrônicos</p>
+      <h1>Complexo Industrial Educacional Sustentável</h1>
+      <p>Formando a próxima geração de líderes industriais através de educação prática, inovação tecnológica e desenvolvimento sustentável</p>
     </section>
 
     <!-- Início Section -->
     <section id="inicio" class="section active">
-      <h2>Início</h2>
-      <p>Bem-vindo ao site oficial do projeto Fábrica Escola Meca Genial!</p>
-      <p>Este projeto tem como objetivo promover educação tecnológica e inovação por meio da construção de dispositivos mecânicos e eletrônicos, como o gerador de energia na roda da bicicleta.</p>
-      <p>Em breve, você encontrará aqui conteúdos sobre o funcionamento dos protótipos, vídeos demonstrativos, materiais didáticos e atualizações do projeto.</p>
+      <h2>Bem-vindo ao Futuro da Educação Industrial</h2>
+      <p>Um ecossistema completo que integra formação técnica, produção industrial e sustentabilidade em um único espaço inovador.</p>
+      
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>🏭 Produção Real</h3>
+          <p>Fábricas de alta tecnologia onde alunos aprendem na prática enquanto produzem para o mercado</p>
+        </div>
+        <div class="feature-card">
+          <h3>🎓 Formação Integral</h3>
+          <p>Moradia, alimentação e educação técnica integradas no mesmo complexo</p>
+        </div>
+        <div class="feature-card">
+          <h3>🌱 Sustentabilidade</h3>
+          <p>Urbanismo ambientalista com energia renovável e gestão circular de recursos</p>
+        </div>
+      </div>
     </section>
 
-    <!-- Sobre Section -->
-    <section id="sobre" class="section">
-      <h2>Sobre o Projeto</h2>
-      <p>A Fábrica Escola Meca Genial é uma iniciativa inovadora que combina educação prática com desenvolvimento tecnológico.</p>
+    <!-- Visão Section -->
+    <section id="visao" class="section">
+      <h2>Nossa Visão Estratégica</h2>
       
-      <h3>Nossa Missão</h3>
-      <p>Capacitar jovens através do aprendizado prático em mecânica e eletrônica, desenvolvendo soluções sustentáveis para a comunidade.</p>
+      <h3>Objetivo Central</h3>
+      <p>Criar um ecossistema industrial completo que forme profissionais de elite, promova inovação tecnológica e desenvolva a região de forma sustentável.</p>
       
-      <h3>Nossos Valores</h3>
-      <ul>
-        <li>Inovação tecnológica</li>
-        <li>Educação prática</li>
-        <li>Sustentabilidade</li>
-        <li>Compartilhamento de conhecimento</li>
-      </ul>
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>🎯 Missão</h3>
+          <p>Integrar educação técnica de excelência com produção industrial inovadora e práticas sustentáveis</p>
+        </div>
+        <div class="feature-card">
+          <h3>👁️ Visão</h3>
+          <p>Ser referência mundial em educação industrial sustentável até 2030</p>
+        </div>
+        <div class="feature-card">
+          <h3>💎 Valores</h3>
+          <p>Inovação, Sustentabilidade, Excelência, Colaboração Internacional</p>
+        </div>
+      </div>
     </section>
 
-    <!-- Galeria Section -->
-    <section id="galeria" class="section">
-      <h2>Galeria de Projetos</h2>
-      <div class="gallery-grid">
-        <div class="gallery-item">
-          <div style="background: #ddd; height: 100%; display: flex; align-items: center; justify-content: center;">
-            <span>Imagem do Gerador de Energia</span>
-          </div>
+    <!-- Estrutura Section -->
+    <section id="estrutura" class="section">
+      <h2>Estrutura do Complexo</h2>
+      
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>🏭 Núcleo Industrial</h3>
+          <ul>
+            <li>Fábricas de usinagem e automação</li>
+            <li>Laboratórios de P&D</li>
+            <li>Centro de prototipagem</li>
+            <li>Usina de energias renováveis</li>
+          </ul>
         </div>
-        <div class="gallery-item">
-          <div style="background: #eee; height: 100%; display: flex; align-items: center; justify-content: center;">
-            <span>Oficina em Andamento</span>
-          </div>
+        
+        <div class="feature-card">
+          <h3>🏫 Centro Educacional</h3>
+          <ul>
+            <li>Escola técnica integrada</li>
+            <li>Centro de idiomas</li>
+            <li>Biblioteca tecnológica</li>
+            <li>Auditórios e salas de aula</li>
+          </ul>
         </div>
-        <div class="gallery-item">
-          <div style="background: #ccc; height: 100%; display: flex; align-items: center; justify-content: center;">
-            <span>Protótipos Desenvolvidos</span>
-          </div>
+        
+        <div class="feature-card">
+          <h3>🏘️ Infraestrutura Social</h3>
+          <ul>
+            <li>Alojamentos estudantis</li>
+            <li>Refeitórios com nutricionistas</li>
+            <li>Centro médico integrado</li>
+            <li>Áreas de lazer e esporte</li>
+          </ul>
+        </div>
+        
+        <div class="feature-card">
+          <h3>🌱 Sustentabilidade</h3>
+          <ul>
+            <li>Horta comunitária orgânica</li>
+            <li>Sistema de reaproveitamento de água</li>
+            <li>Energia solar e eólica</li>
+            <li>Transporte elétrico interno</li>
+          </ul>
         </div>
       </div>
     </section>
 
     <!-- Projetos Section -->
     <section id="projetos" class="section">
-      <h2>Nossos Projetos</h2>
-      <h3>Gerador de Energia para Bicicleta</h3>
-      <p>Desenvolvemos um sistema inovador que converte energia mecânica da bicicleta em energia elétrica.</p>
+      <h2>Projetos Inovadores em Andamento</h2>
       
-      <h3>Próximos Projetos</h3>
-      <ul>
-        <li>Sistema de irrigação automática</li>
-        <li>Carregador solar portátil</li>
-        <li>Dispositivos de eficiência energética</li>
-      </ul>
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>🔋 Gerador de Energia para Bicicleta</h3>
+          <p>Sistema que converte energia mecânica em elétrica com eficiência superior</p>
+        </div>
+        
+        <div class="feature-card">
+          <h3>🌿 Sistema de Irrigação Automática</h3>
+          <p>Tecnologia sustentável para agricultura de precisão</p>
+        </div>
+        
+        <div class="feature-card">
+          <h3>🏗️ Centro de Reciclagem Avançada</h3>
+          <p>Reaproveitamento inteligente de materiais industriais</p>
+        </div>
+        
+        <div class="feature-card">
+          <h3>🤖 Laboratório de Robótica Educacional</h3>
+          <p>Desenvolvimento de soluções em automação industrial</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sustentabilidade Section -->
+    <section id="sustentabilidade" class="section">
+      <h2>Sustentabilidade como Pilar</h2>
+      
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>♻️ Economia Circular</h3>
+          <p>Sistema integrado de reaproveitamento de resíduos industriais</p>
+        </div>
+        
+        <div class="feature-card">
+          <h3>☀️ Energia Renovável</h3>
+          <p>Geração própria através de painéis solares e microturbinas eólicas</p>
+        </div>
+        
+        <div class="feature-card">
+          <h3>💧 Gestão Hídrica</h3>
+          <p>Captação de água da chuva e sistema de reúso inteligente</p>
+        </div>
+        
+        <div class="feature-card">
+          <h3>🌳 Paisagismo Sustentável</h3>
+          <p>Áreas verdes integradas com espécies nativas e telhados verdes</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Intercâmbio Section -->
+    <section id="intercambio" class="section">
+      <h2>Intercâmbio Internacional</h2>
+      
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>🌍 Programa de Intercâmbio</h3>
+          <p>Parcerias com instituições na Alemanha, Japão, Coreia e EUA</p>
+        </div>
+        
+        <div class="feature-card">
+          <h3>🏠 Residência Internacional</h3>
+          <p>Profissionais estrangeiros em estadia para troca de conhecimentos</p>
+        </div>
+        
+        <div class="feature-card">
+          <h3>🗣️ Centro de Idiomas</h3>
+          <p>Preparação em inglês, alemão, japonês e espanhol</p>
+        </div>
+        
+        <div class="feature-card">
+          <h3>📚 Museu da Tecnologia</h3>
+          <p>Exposições internacionais e históricas da evolução industrial</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Carreiras Section -->
+    <section id="carreiras" class="section">
+      <h2>Carreiras e Oportunidades</h2>
+      
+      <h3>Modelo de Estágio Remunerado</h3>
+      <p>Os alunos trabalham nas fábricas do complexo enquanto estudam, com bolsas que cobrem moradia e alimentação.</p>
+      
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>💰 Bolsa Estágio</h3>
+          <p>Remuneração + moradia + alimentação + plano de saúde</p>
+        </div>
+        
+        <div class="feature-card">
+          <h3>🎯 Avaliação por Mérito</h3>
+          <p>Sistema de premiação por inovação e desempenho</p>
+        </div>
+        
+        <div class="feature-card">
+          <h3>🚀 Carreira Internacional</h3>
+          <p>Oportunidades em empresas parceiras no exterior</p>
+        </div>
+        
+        <div class="feature-card">
+          <h3>💼 Empreendedorismo</h3>
+          <p>Apoio à criação de startups pelos alunos formados</p>
+        </div>
+      </div>
     </section>
 
     <!-- Contato Section -->
     <section id="contato" class="section">
-      <h2>Entre em Contato</h2>
-      <form class="contact-form">
+      <h2>Junte-se a Nós</h2>
+      
+      <div class="contact-form">
         <div class="form-group">
-          <label for="nome">Nome:</label>
+          <label for="interesse">Área de Interesse:</label>
+          <select id="interesse" name="interesse">
+            <option value="">Selecione uma opção</option>
+            <option value="estudante">Estudante/Técnico</option>
+            <option value="professor">Professor/Pesquisador</option>
+            <option value="empresa">Empresa Parceira</option>
+            <option value="investidor">Investidor</option>
+            <option value="governo">Órgão Governamental</option>
+            <option value="midia">Imprensa</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="nome">Nome Completo:</label>
           <input type="text" id="nome" name="nome" required>
         </div>
         
@@ -400,28 +600,22 @@
         </div>
         
         <div class="form-group">
+          <label for="telefone">Telefone:</label>
+          <input type="tel" id="telefone" name="telefone">
+        </div>
+        
+        <div class="form-group">
+          <label for="instituicao">Instituição/Empresa:</label>
+          <input type="text" id="instituicao" name="instituicao">
+        </div>
+        
+        <div class="form-group">
           <label for="mensagem">Mensagem:</label>
           <textarea id="mensagem" name="mensagem" required></textarea>
         </div>
         
-        <button type="submit" class="btn">Enviar Mensagem</button>
+        <button type="submit" class="btn">Enviar Manifestação de Interesse</button>
       </form>
-    </section>
-
-    <!-- Patrocínio Section -->
-    <section id="patrocinio" class="section">
-      <h2>Patrocínio e Parcerias</h2>
-      <p>Seja um apoiador do projeto Meca Genial!</p>
-      
-      <h3>Benefícios para Patrocinadores</h3>
-      <ul>
-        <li>Visibilidade da marca</li>
-        <li>Participação em eventos</li>
-        <li>Desenvolvimento de projetos sob medida</li>
-        <li>Contribuição para a educação tecnológica</li>
-      </ul>
-      
-      <p>Entre em contato para saber mais sobre nossas oportunidades de patrocínio.</p>
     </section>
   </main>
 
@@ -429,18 +623,23 @@
   <footer>
     <div class="footer-content">
       <div>
-        <h3>Fábrica Escola Meca Genial</h3>
-        <p>Promovendo inovação e educação tecnológica</p>
+        <h3>Complexo Industrial Educacional Sustentável</h3>
+        <p>Formando líderes para a indústria 4.0</p>
+      </div>
+      
+      <div>
+        <h3>Parcerias Estratégicas</h3>
+        <p>SENAI • Institutos Federais • Universidades Internacionais</p>
       </div>
       
       <div>
         <h3>Contato</h3>
-        <p>Email: contato@mecagenial.com</p>
+        <p>Email: partnerships@complexoindustrial.edu.br</p>
         <p>Telefone: (XX) XXXX-XXXX</p>
       </div>
       
       <div>
-        <h3>Redes Sociais</h3>
+        <h3>Conecte-se</h3>
         <div class="social-links">
           <a href="#">📘</a>
           <a href="#">📷</a>
@@ -450,7 +649,7 @@
       </div>
     </div>
     
-    <p style="margin-top: 2rem;">&copy; 2024 Meca Genial - Todos os direitos reservados</p>
+    <p style="margin-top: 2rem;">&copy; 2024 Complexo Industrial Educacional Sustentável - Todos os direitos reservados</p>
   </footer>
 
   <script>
@@ -479,7 +678,7 @@
       if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
           e.preventDefault();
-          alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
+          alert('Obrigado pelo seu interesse! Entraremos em contato em breve para discutir parcerias.');
           this.reset();
         });
       }
@@ -489,7 +688,7 @@
     function googleTranslateElementInit() {
       new google.translate.TranslateElement({
         pageLanguage: 'pt',
-        includedLanguages: 'en,es,fr,de,it',
+        includedLanguages: 'en,es,fr,de,it,ja,ko',
         layout: google.translate.TranslateElement.InlineLayout.SIMPLE
       }, 'google_translate_element');
     }
@@ -498,4 +697,3 @@
   <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
-
