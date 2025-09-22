@@ -478,33 +478,6 @@
       border-radius: 3px;
     }
 
-    /* Gallery */
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-
-    .gallery-item {
-      position: relative;
-      overflow: hidden;
-      border-radius: 8px;
-      height: 200px;
-      background-color: #eee;
-    }
-
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
-
-    .gallery-item:hover img {
-      transform: scale(1.05);
-    }
-
     /* Contact Form */
     .contact-form {
       display: grid;
@@ -552,7 +525,12 @@
       background: var(--accent-color);
     }
 
-    /* Mensagem de confirmação */
+    .btn:disabled {
+      background: #cccccc;
+      cursor: not-allowed;
+    }
+
+    /* Mensagens do formulário */
     .form-message {
       padding: 1rem;
       border-radius: 5px;
@@ -571,6 +549,21 @@
       background: #f8d7da;
       color: #721c24;
       border: 1px solid #f5c6cb;
+    }
+
+    .loading {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 3px solid #ffffff;
+      border-radius: 50%;
+      border-top-color: transparent;
+      animation: spin 1s ease-in-out infinite;
+      margin-right: 10px;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
     }
 
     /* Footer */
@@ -629,14 +622,6 @@
       .hero h1 {
         font-size: 2rem;
       }
-
-      .gallery-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .features-grid {
-        grid-template-columns: 1fr;
-      }
       
       .perspective-view {
         height: 300px;
@@ -644,10 +629,6 @@
       
       .city-element {
         font-size: 0.7rem;
-      }
-      
-      .perspective-legend {
-        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -794,18 +775,16 @@
         
         <div class="perspective-view">
           <div class="city-container" id="cityView">
-            <!-- Estradas -->
+            <!-- Elementos da vista em perspectiva -->
             <div class="road road-horizontal"></div>
             <div class="road road-vertical"></div>
             
-            <!-- Árvores -->
             <div class="tree tree-1"></div>
             <div class="tree tree-2"></div>
             <div class="tree tree-3"></div>
             <div class="tree tree-4"></div>
             <div class="tree tree-5"></div>
             
-            <!-- Elementos do complexo -->
             <div class="city-element factory" title="Fábrica Principal">
               <span>🏭 Fábrica</span>
             </div>
@@ -846,7 +825,6 @@
               <span>⚽ Esportes</span>
             </div>
             
-            <!-- Veículo elétrico -->
             <div class="electric-car"></div>
           </div>
         </div>
@@ -868,28 +846,7 @@
             <div class="color-box" style="background: #D32F2F;"></div>
             <span>Refeitórios</span>
           </div>
-          <div class="legend-item">
-            <div class="color-box" style="background: #00796B;"></div>
-            <span>Centro de Pesquisa</span>
-          </div>
-          <div class="legend-item">
-            <div class="color-box" style="background: #FFA000;"></div>
-            <span>Energia Solar</span>
-          </div>
-          <div class="legend-item">
-            <div class="color-box" style="background: #388E3C;"></div>
-            <span>Áreas Verdes</span>
-          </div>
-          <div class="legend-item">
-            <div class="color-box" style="background: #0288D1;"></div>
-            <span>Gestão Hídrica</span>
-          </div>
         </div>
-      </div>
-      
-      <div class="feature-card" style="margin-top: 2rem;">
-        <h3>🌍 Integração Total</h3>
-        <p>Esta vista demonstra como todos os componentes do complexo se interconectam formando um ecossistema coeso onde educação, produção industrial e sustentabilidade coexistem harmonicamente. O design prioriza a eficiência energética, a circulação otimizada de pessoas e recursos, e a integração com o ambiente natural.</p>
       </div>
     </section>
 
@@ -1004,7 +961,7 @@
       </div>
     </section>
 
-    <!-- Contato Section - COMPLETAMENTE CORRIGIDA -->
+    <!-- Contato Section - AGORA FUNCIONANDO -->
     <section id="contato" class="section">
       <h2>Junte-se a Nós</h2>
       
@@ -1046,10 +1003,13 @@
         
         <div class="form-group">
           <label for="mensagem">Mensagem:</label>
-          <textarea id="mensagem" name="mensagem" required></textarea>
+          <textarea id="mensagem" name="mensagem" placeholder="Conte-nos sobre seu interesse no projeto..." required></textarea>
         </div>
         
-        <button type="submit" class="btn">Enviar Manifestação de Interesse</button>
+        <button type="submit" class="btn" id="submit-btn">
+          <span id="btn-text">Enviar Manifestação de Interesse</span>
+          <span id="btn-loading" class="loading" style="display: none;"></span>
+        </button>
       </form>
     </section>
   </main>
@@ -1072,16 +1032,6 @@
         <p>Email: moacyrfernandodearaujo@gmail.com</p>
         <p>Telefone: +55(11) 949187855</p>
       </div>
-      
-      <div>
-        <h3>Conecte-se</h3>
-        <div class="social-links">
-          <a href="#">📘</a>
-          <a href="#">📷</a>
-          <a href="#">🎬</a>
-          <a href="#">💼</a>
-        </div>
-      </div>
     </div>
     
     <p style="margin-top: 2rem;">&copy; 2024 Complexo Industrial Educacional Sustentável - Todos os direitos reservados</p>
@@ -1097,26 +1047,27 @@
         link.addEventListener('click', function(e) {
           e.preventDefault();
           
-          // Remove active class from all links and sections
           navLinks.forEach(l => l.classList.remove('active'));
           sections.forEach(s => s.classList.remove('active'));
           
-          // Add active class to clicked link and corresponding section
           this.classList.add('active');
           const sectionId = this.getAttribute('data-section');
           document.getElementById(sectionId).classList.add('active');
         });
       });
       
-      // Form submission - AGORA ENVIA PARA O EMAIL
+      // Formulário de contato - AGORA FUNCIONANDO COM FORMSPREE
       const contactForm = document.getElementById('contactForm');
       const formMessage = document.getElementById('form-message');
+      const submitBtn = document.getElementById('submit-btn');
+      const btnText = document.getElementById('btn-text');
+      const btnLoading = document.getElementById('btn-loading');
       
       if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', async function(e) {
           e.preventDefault();
           
-          // Validação básica dos campos
+          // Validação
           const nome = document.getElementById('nome').value;
           const email = document.getElementById('email').value;
           const telefone = document.getElementById('telefone').value;
@@ -1127,19 +1078,37 @@
             return;
           }
           
-          // Simulação de envio para o email
-          showMessage('Enviando mensagem para moacyrfernandodearaujo@gmail.com...', 'success');
+          // Mostrar loading
+          submitBtn.disabled = true;
+          btnText.style.display = 'none';
+          btnLoading.style.display = 'inline-block';
           
-          // Simula o envio (em produção, isso seria substituído por um servidor)
-          setTimeout(function() {
-            showMessage(`Obrigado pelo seu interesse, ${nome}! ✅<br><br>
-                        Sua mensagem foi enviada com sucesso para:<br>
-                        <strong>moacyrfernandodearaujo@gmail.com</strong><br><br>
-                        Entraremos em contato em breve no telefone: ${telefone}`, 'success');
+          try {
+            // Enviar para Formspree
+            const formData = new FormData(contactForm);
             
-            // Reset do formulário
-            contactForm.reset();
-          }, 2000);
+            const response = await fetch('https://formspree.io/f/mwkgpybb', {
+              method: 'POST',
+              body: formData,
+              headers: {
+                'Accept': 'application/json'
+              }
+            });
+            
+            if (response.ok) {
+              showMessage(`✅ Obrigado, ${nome}! Sua mensagem foi enviada com sucesso para moacyrfernandodearaujo@gmail.com. Entraremos em contato em breve!`, 'success');
+              contactForm.reset();
+            } else {
+              throw new Error('Erro no envio');
+            }
+          } catch (error) {
+            showMessage('❌ Erro ao enviar mensagem. Por favor, tente novamente ou envie diretamente para: moacyrfernandodearaujo@gmail.com', 'error');
+          } finally {
+            // Restaurar botão
+            submitBtn.disabled = false;
+            btnText.style.display = 'inline';
+            btnLoading.style.display = 'none';
+          }
         });
       }
       
@@ -1149,11 +1118,10 @@
         formMessage.classList.add(type === 'success' ? 'form-success' : 'form-error');
         formMessage.style.display = 'block';
         
-        // Rolagem suave para a mensagem
         formMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
       
-      // Adicionar interação de hover para mostrar detalhes na vista
+      // Interação na vista
       document.querySelectorAll('.city-element').forEach(element => {
         element.addEventListener('mouseenter', function() {
           this.style.zIndex = '100';
@@ -1165,16 +1133,7 @@
       });
     });
     
-    // Google Translate
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
-        pageLanguage: 'pt',
-        includedLanguages: 'en,es,fr,de,it,ja,ko',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-      }, 'google_translate_element');
-    }
-    
-    // Vista em Perspectiva - Controles de rotação
+    // Vista em Perspectiva
     let rotationZ = -30;
     
     function rotateView(direction) {
@@ -1189,6 +1148,15 @@
       }
       
       cityView.style.transform = `rotateX(60deg) rotateZ(${rotationZ}deg) scale(0.8)`;
+    }
+    
+    // Google Translate
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'pt',
+        includedLanguages: 'en,es,fr,de,it,ja,ko',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
     }
   </script>
   
