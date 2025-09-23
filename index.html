@@ -2,17 +2,28 @@
 <html lang="pt-BR">
 <head> 
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-X0YTCFECZT"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-X0YTCFECZT');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-X0YTCFECZT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-X0YTCFECZT');
+  </script>
+  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Complexo Industrial Educacional Sustentável - Meca Genial</title>
+  <meta name="description" content="Complexo Industrial Educacional Sustentável - Uma utopia realizável que integra educação técnica, produção industrial e sustentabilidade com alojamento estudantil">
+  <meta name="keywords" content="educação técnica, escola industrial, sustentabilidade, alojamento estudantil, curso técnico, mecânica, usinagem, projeto educacional">
+  <meta name="author" content="Meca Genial">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Complexo Industrial Educacional Sustentável - Meca Genial">
+  <meta property="og:description" content="Projeto visionário de educação técnica integrada com produção industrial e sustentabilidade">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.mecagenial.com.br">
+  
+  <title>Complexo Industrial Educacional Sustentável - Meca Genial | Educação Técnica Inovadora</title>
+  
   <style>
     :root {
       --primary-color: #004080;
@@ -35,6 +46,68 @@
       line-height: 1.6;
       color: var(--text-color);
       background-color: var(--light-bg);
+    }
+
+    /* Modal Pop-up Brasil */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-brasil {
+      background: linear-gradient(135deg, #009c3b 0%, #ffdf00 50%, #009c3b 100%);
+      padding: 2rem;
+      border-radius: 15px;
+      max-width: 500px;
+      width: 90%;
+      text-align: center;
+      border: 5px solid #002776;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      position: relative;
+    }
+
+    .modal-brasil h2 {
+      color: #002776;
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+    }
+
+    .modal-brasil p {
+      color: #002776;
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+
+    .modal-brasil .btn-brasil {
+      background: #002776;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 25px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 2px solid #ffdf00;
+    }
+
+    .modal-brasil .btn-brasil:hover {
+      background: #ffdf00;
+      color: #002776;
+      transform: scale(1.05);
+    }
+
+    .brasil-flag {
+      font-size: 3rem;
+      margin-bottom: 1rem;
     }
 
     header {
@@ -144,6 +217,20 @@
       color: var(--white);
       border-radius: 10px;
       margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .hero-badge {
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #ffdf00;
+      color: #002776;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-weight: bold;
+      font-size: 0.9rem;
     }
 
     .hero h1 {
@@ -297,14 +384,33 @@
       .hero h1 {
         font-size: 2rem;
       }
+      
+      .modal-brasil {
+        padding: 1rem;
+      }
+      
+      .modal-brasil h2 {
+        font-size: 1.5rem;
+      }
     }
   </style>
 </head>
 <body>
+  <!-- Pop-up Brasil -->
+  <div id="modalBrasil" class="modal-overlay">
+    <div class="modal-brasil">
+      <div class="brasil-flag">🇧🇷</div>
+      <h2>🚀 Uma Ideia Visionária Brasileira!</h2>
+      <p><strong>AVISO IMPORTANTE:</strong> Este projeto representa uma <strong>utopia realizável</strong> que ainda busca terreno e parceiros para sair do papel.</p>
+      <p>Você está visualizando um <strong>conceito inovador</strong> de educação técnica integrada com sustentabilidade. Juntos podemos transformar esta visão em realidade!</p>
+      <button class="btn-brasil" onclick="closeModal()">Entendi e Quero Apoiar!</button>
+    </div>
+  </div>
+
   <header>
     <div class="header-container">
       <div class="logo-container">
-        <img src="logo.png" alt="Logo Meca Genial" class="logo-image">
+        <img src="logo.png" alt="Logo Meca Genial - Complexo Industrial Educacional Sustentável" class="logo-image">
         <h1>Complexo Industrial Educacional Sustentável</h1>
       </div>
       <div id="google_translate_element"></div>
@@ -321,6 +427,8 @@
         <li><a href="#sustentabilidade" class="nav-link" data-section="sustentabilidade">Sustentabilidade</a></li>
         <li><a href="#intercambio" class="nav-link" data-section="intercambio">Intercâmbio</a></li>
         <li><a href="#carreiras" class="nav-link" data-section="carreiras">Carreiras</a></li>
+        <!-- NOVA ABA BLOG -->
+        <li><a href="https://www.mecagenial.com.br" class="nav-link" target="_blank" rel="noopener">Blog</a></li>
         <li><a href="#contato" class="nav-link" data-section="contato">Contato</a></li>
       </ul>
     </div>
@@ -328,13 +436,14 @@
 
   <main>
     <section class="hero">
+      <div class="hero-badge">🚧 UTOPIA REALIZÁVEL EM CONSTRUÇÃO</div>
       <h1>Complexo Industrial Educacional Sustentável</h1>
       <p>Formando a próxima geração de líderes industriais através de educação prática, inovação tecnológica e desenvolvimento sustentável</p>
     </section>
 
     <section id="inicio" class="section active">
       <h2>Bem-vindo ao Futuro da Educação Industrial</h2>
-      <p>Um ecossistema completo que integra formação técnica, produção industrial e sustentabilidade em um único espaço inovador.</p>
+      <p><strong>Projeto Visionário:</strong> Um ecossistema completo que integra formação técnica, produção industrial e sustentabilidade em um único espaço inovador. <em>Esta é uma utopia que buscamos concretizar!</em></p>
       
       <div class="features-grid">
         <div class="feature-card">
@@ -595,22 +704,33 @@
   </footer>
 
   <script>
-    // Navegação entre seções
+    // Pop-up Brasil - Aparece ao carregar a página
     document.addEventListener('DOMContentLoaded', function() {
-      const navLinks = document.querySelectorAll('.nav-link');
-      const sections = document.querySelectorAll('.section');
-      
-      navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-          e.preventDefault();
-          
-          navLinks.forEach(l => l.classList.remove('active'));
-          sections.forEach(s => s.classList.remove('active'));
-          
-          this.classList.add('active');
-          const sectionId = this.getAttribute('data-section');
-          document.getElementById(sectionId).classList.add('active');
-        });
+      setTimeout(function() {
+        document.getElementById('modalBrasil').style.display = 'flex';
+      }, 1000);
+    });
+
+    function closeModal() {
+      document.getElementById('modalBrasil').style.display = 'none';
+    }
+
+    // Navegação entre seções
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('.section');
+    
+    navLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        if (!this.getAttribute('href').includes('#')) return; // Permite links externos como o Blog
+        
+        e.preventDefault();
+        
+        navLinks.forEach(l => l.classList.remove('active'));
+        sections.forEach(s => s.classList.remove('active'));
+        
+        this.classList.add('active');
+        const sectionId = this.getAttribute('data-section');
+        document.getElementById(sectionId).classList.add('active');
       });
     });
 
@@ -677,4 +797,3 @@ ${mensagem}
   <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
-
