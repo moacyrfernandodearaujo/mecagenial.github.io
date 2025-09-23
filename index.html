@@ -1,223 +1,246 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head> 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-X0YTCFECZT"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-X0YTCFECZT');
-  </script>
-  
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="MecaGenial: Cidade-Escola da Indústria do Futuro. Complexo Industrial Educacional Sustentável que integra educação técnica, produção industrial e sustentabilidade com alojamento estudantil. Formação prática em mecânica, usinagem, automação e mais.">
-  <meta name="keywords" content="cidade-escola, educação técnica, escola industrial, sustentabilidade, alojamento estudantil, curso técnico, mecânica, usinagem, projeto educacional, MecaGenial, complexo industrial educacional, formação técnica integrada">
-  <meta name="author" content="Meca Genial">
-  
-  <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="MecaGenial: Cidade-Escola da Indústria do Futuro">
-  <meta property="og:description" content="Projeto visionário de educação técnica integrada com produção industrial e sustentabilidade. Formando a próxima geração de líderes industriais.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.mecagenial.com.br">
-  <meta property="og:image" content="https://www.mecagenial.com.br/logo.png">
-  <meta property="og:locale" content="pt_BR">
-  
-  <title>MecaGenial: Cidade-Escola da Indústria do Futuro | Educação Técnica Inovadora</title>
-  
-  <style>
-    /* ... (o CSS permanece igual) ... */
-  </style>
+<head>
+    <!-- METADADOS ESSENCIAIS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MecaGenial: Cidade-Escola da Indústria do Futuro | Educação Técnica 4.0</title>
+    <meta name="description" content="Projeto visionário de cidade-escola que integra educação técnica, produção industrial e sustentabilidade. Formando os líderes da indústria 4.0.">
+    
+    <!-- OPEN GRAPH (Facebook/LinkedIn) -->
+    <meta property="og:title" content="MecaGenial: A Revolução na Educação Técnica Brasileira">
+    <meta property="og:description" content="Cidade-escola com formação prática, sustentabilidade e inovação. Junte-se à revolução industrial 4.0!">
+    <meta property="og:image" content="https://mecagenial.com.br/assets/images/og-image.jpg">
+    <meta property="og:url" content="https://mecagenial.com.br">
+    <meta property="og:type" content="website">
+    
+    <!-- TWITTER CARD -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MecaGenial: Educação Técnica do Futuro">
+    <meta name="twitter:description" content="Projeto inovador de cidade-escola industrial">
+    
+    <!-- FAVICON -->
+    <link rel="icon" href="assets/images/favicon.ico">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Pop-up Brasil -->
-  <div id="modalBrasil" class="modal-overlay">
-    <div class="modal-brasil">
-      <div class="brasil-flag">🇧🇷</div>
-      <h2>🚀 Uma Ideia Visionária Brasileira!</h2>
-      <p><strong>AVISO IMPORTANTE:</strong> Este projeto representa uma <strong>utopia realizável</strong> que ainda busca terreno e parceiros para sair do papel.</p>
-      <p>Você está visualizando um <strong>conceito inovador</strong> de educação técnica integrada com sustentabilidade. Juntos podemos transformar esta visão em realidade!</p>
-      <button class="btn-brasil" onclick="closeModal()">Entendi e Quero Apoiar!</button>
+    <!-- 🔝 LOADING SUAVE -->
+    <div class="loading" id="loading">
+        <div class="loader">MecaGenial</div>
     </div>
-  </div>
 
-  <header>
-    <div class="header-container">
-      <div class="logo-container">
-        <img src="logo.png" alt="Logo Meca Genial - Complexo Industrial Educacional Sustentável" class="logo-image" onerror="this.style.display='none'">
-        <h1>MecaGenial: Complexo Industrial Educacional Sustentável</h1>
-      </div>
-      <div id="google_translate_element"></div>
-    </div>
-  </header>
+    <!-- 🏠 HEADER -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="logo">
+                <img src="assets/images/logo.png" alt="MecaGenial" width="40" height="40">
+                <span>MecaGenial</span>
+            </a>
+            
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="#hero" class="nav-link active">Início</a></li>
+                    <li><a href="#about" class="nav-link">O Projeto</a></li>
+                    <li><a href="#structure" class="nav-link">Estrutura</a></li>
+                    <li><a href="#sustainability" class="nav-link">Sustentabilidade</a></li>
+                    <li><a href="#contact" class="nav-link">Contato</a></li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <a href="#contact" class="btn btn-primary">Junte-se a Nós</a>
+                </div>
+            </div>
+            
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
 
-  <nav>
-    <div class="nav-container">
-      <button class="hamburger" id="hamburger" aria-label="Menu de navegação">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <ul class="nav-menu" id="navMenu">
-        <li><a href="#inicio" class="nav-link active" data-section="inicio">Início</a></li>
-        <li><a href="#visao" class="nav-link" data-section="visao">Visão</a></li>
-        <li><a href="#estrutura" class="nav-link" data-section="estrutura">Estrutura</a></li>
-        <li><a href="#projetos" class="nav-link" data-section="projetos">Projetos</a></li>
-        <li><a href="#sustentabilidade" class="nav-link" data-section="sustentabilidade">Sustentabilidade</a></li>
-        <li><a href="#intercambio" class="nav-link" data-section="intercambio">Intercâmbio</a></li>
-        <li><a href="#carreiras" class="nav-link" data-section="carreiras">Carreiras</a></li>
-        <li><a href="https://www.mecagenial.com.br" class="nav-link" target="_blank" rel="noopener">Blog</a></li>
-        <li><a href="#contato" class="nav-link" data-section="contato">Contato</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <main>
-    <section class="hero">
-      <div class="hero-badge">🚧 UTOPIA REALIZÁVEL EM CONSTRUÇÃO</div>
-      <h1>MecaGenial: Complexo Industrial Educacional Sustentável</h1>
-      <p>Formando a próxima geração de líderes industriais através de educação prática, inovação tecnológica e desenvolvimento sustentável</p>
+    <!-- 🚀 HERO SECTION -->
+    <section class="hero" id="hero">
+        <div class="hero-container container">
+            <div class="hero-content">
+                <span class="hero-badge">🚀 Projeto Visionário</span>
+                <h1 class="hero-title">A Primeira <span class="highlight">Cidade-Escola</span> da Indústria Brasileira</h1>
+                <p class="hero-description">Um ecossistema completo que integra educação técnica de ponta, produção industrial real e sustentabilidade em um espaço inovador.</p>
+                
+                <div class="hero-actions">
+                    <a href="#about" class="btn btn-primary">Conhecer o Projeto</a>
+                    <a href="#contact" class="btn btn-secondary">Quero Participar</a>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Prático</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">360°</span>
+                        <span class="stat-label">Integral</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">♻️</span>
+                        <span class="stat-label">Sustentável</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="floating-card card-1">
+                    <span>🏭</span>
+                    <p>Produção Real</p>
+                </div>
+                <div class="floating-card card-2">
+                    <span>🎓</span>
+                    <p>Formação Técnica</p>
+                </div>
+                <div class="floating-card card-3">
+                    <span>🌱</span>
+                    <p>Sustentabilidade</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="hero-scroll">
+            <span>Scroll Down</span>
+            <div class="scroll-arrow"></div>
+        </div>
     </section>
 
-    <!-- Seções mantidas do seu código original -->
-    <section id="inicio" class="section active">
-      <h2>Bem-vindo ao Futuro da Educação Industrial</h2>
-      <p><strong>Projeto Visionário:</strong> Um ecossistema completo que integra formação técnica, produção industrial e sustentabilidade em um único espaço inovador. <em>Esta é uma utopia que buscamos concretizar!</em></p>
-      
-      <div class="features-grid">
-        <div class="feature-card">
-          <h3>🏭 Produção Real</h3>
-          <p>Fábricas de alta tecnologia onde alunos aprendem na prática enquanto produzem para o mercado</p>
+    <!-- 📖 SOBRE O PROJETO -->
+    <section class="about section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Conceito Inovador</span>
+                <h2 class="section-title">Mais que uma Escola, uma <span class="highlight">Cidade Inteligente</span></h2>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="about-icon">🏗️</div>
+                    <h3>Infraestrutura de Ponta</h3>
+                    <p>Laboratórios industriais reais, moradia estudantil moderna e áreas comuns de convivência.</p>
+                </div>
+                
+                <div class="about-card">
+                    <div class="about-icon">⚡</div>
+                    <h3>Energia Sustentável</h3>
+                    <p>Fazenda solar própria, sistema de reaproveitamento de água e gestão circular de recursos.</p>
+                </div>
+                
+                <div class="about-card">
+                    <div class="about-icon">🤝</div>
+                    <h3>Parcerias Estratégicas</h3>
+                    <p>Rede com indústrias, universidades e órgãos governamentais para formação prática.</p>
+                </div>
+            </div>
         </div>
-        <div class="feature-card">
-          <h3>🎓 Formação Integral</h3>
-          <p>Moradia, alimentação e educação técnica integradas no mesmo complexo</p>
-        </div>
-        <div class="feature-card">
-          <h3>🌱 Sustentabilidade</h3>
-          <p>Urbanismo ambientalista com energia renovável e gestão circular de recursos</p>
-        </div>
-      </div>
     </section>
 
-    <!-- As outras seções (visao, estrutura, projetos, etc.) permanecem iguais -->
-    <!-- Para economizar espaço, mantenho apenas a primeira seção como exemplo -->
+    <!-- ✨ MAIS SEÇÕES AQUI (Estrutura, Sustentabilidade, Contato) -->
 
-    <section id="contato" class="section">
-      <h2>Junte-se a Nós</h2>
-      
-      <div id="form-message" class="form-message"></div>
-      
-      <form class="contact-form" id="contactForm">
-        <div class="form-group">
-          <label for="interesse">Área de Interesse:</label>
-          <select id="interesse" name="interesse" required>
-            <option value="">Selecione uma opção</option>
-            <option value="estudante">Estudante/Técnico</option>
-            <option value="professor">Professor/Pesquisador</option>
-            <option value="empresa">Empresa Parceira</option>
-            <option value="investidor">Investidor</option>
-            <option value="governo">Órgão Governamental</option>
-            <option value="midia">Imprensa</option>
-          </select>
+    <!-- 📞 CONTATO -->
+    <section class="contact section" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Pronto para fazer parte da revolução?</h2>
+                    <p>Estamos buscando parceiros, investidores e talentos apaixonados por educação e tecnologia.</p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <span>📧</span>
+                            <div>
+                                <strong>Email</strong>
+                                <p>contato@mecagenial.com.br</p>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <span>📱</span>
+                            <div>
+                                <strong>Telefone</strong>
+                                <p>+55 (11) 94918-7855</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contact-form" id="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Seu nome completo" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="seu@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <select required>
+                            <option value="">Seu interesse no projeto</option>
+                            <option value="investidor">Investidor</option>
+                            <option value="parceiro">Parceiro Comercial</option>
+                            <option value="educador">Educador</option>
+                            <option value="estudante">Estudante</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Conte-nos sobre sua ideia..." rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+                </form>
+            </div>
         </div>
-        
-        <div class="form-group">
-          <label for="nome">Nome Completo:</label>
-          <input type="text" id="nome" name="nome" required>
-        </div>
-        
-        <div class="form-group">
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-        
-        <div class="form-group">
-          <label for="telefone">Telefone:</label>
-          <input type="tel" id="telefone" name="telefone" required>
-        </div>
-        
-        <div class="form-group">
-          <label for="instituicao">Instituição/Empresa:</label>
-          <input type="text" id="instituicao" name="instituicao">
-        </div>
-        
-        <div class="form-group">
-          <label for="mensagem">Mensagem:</label>
-          <textarea id="mensagem" name="mensagem" placeholder="Conte-nos sobre seu interesse no projeto..." required></textarea>
-        </div>
-        
-        <button type="button" class="btn" id="submit-btn" onclick="sendEmail()">
-          Enviar Manifestação de Interesse
-        </button>
-      </form>
-
-      <div class="direct-contact">
-        <p><strong>Prefere enviar diretamente?</strong></p>
-        <p>Envie um email para: <a href="mailto:moacyrfernandodearaujo@gmail.com">moacyrfernandodearaujo@gmail.com</a></p>
-        <p>Ou ligue para: <a href="tel:+5511949187855">+55 (11) 94918-7855</a></p>
-      </div>
     </section>
-  </main>
 
-  <footer>
-    <div class="footer-content">
-      <div>
-        <h3>MecaGenial: Complexo Industrial Educacional Sustentável</h3>
-        <p>Formando líderes para a indústria 4.0</p>
-      </div>
-      
-      <div>
-        <h3>Parcerias Estratégicas</h3>
-        <p>SENAI • Institutos Federais • Universidades Internacionais</p>
-      </div>
-      
-      <div>
-        <h3>Contato</h3>
-        <p>Email: moacyrfernandodearaujo@gmail.com</p>
-        <p>Telefone: +55(11) 949187855</p>
-      </div>
-    </div>
-    
-    <p style="margin-top: 2rem;">&copy; 2024 MecaGenial - Complexo Industrial Educacional Sustentável - Todos os direitos reservados</p>
-  </footer>
+    <!-- 🔗 FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="assets/images/logo.png" alt="MecaGenial" width="40" height="40">
+                    <span>MecaGenial</span>
+                    <p>Transformando a educação técnica brasileira</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Projeto</h4>
+                        <a href="#about">Sobre</a>
+                        <a href="#structure">Estrutura</a>
+                        <a href="#sustainability">Sustentabilidade</a>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Recursos</h4>
+                        <a href="#">Blog</a>
+                        <a href="#">Imprensa</a>
+                        <a href="#">Carreiras</a>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <a href="#">Privacidade</a>
+                        <a href="#">Termos</a>
+                        <a href="#contact">Contato</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 MecaGenial. Todos os direitos reservados.</p>
+                <p>Uma utopia realizável em construção</p>
+            </div>
+        </div>
+    </footer>
 
-  <script>
-    // ... (o JavaScript permanece igual) ...
-  </script>
-  
-  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-  <!-- Schema Markup -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "EducationalOrganization",
-    "name": "MecaGenial",
-    "alternateName": "Complexo Industrial Educacional Sustentável",
-    "description": "Projeto visionário de educação técnica integrada com produção industrial e sustentabilidade.",
-    "url": "https://www.mecagenial.com.br",
-    "logo": "https://www.mecagenial.com.br/logo.png",
-    "sameAs": [
-      "https://github.com/moacyrfernandodearaujo/mecagenial.github.io"
-    ],
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "BR"
-    },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "email": "moacyrfernandodearaujo@gmail.com",
-      "telephone": "+55-11-94918-7855",
-      "contactType": "Customer service"
-    },
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://www.mecagenial.com.br?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  }
-  </script>
+    <!-- ⚡ JAVASCRIPT -->
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
