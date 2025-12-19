@@ -1,3 +1,27 @@
+# 🏗️ Meca Genial: Educação Sem Fronteiras
+
+> **"Da Fatec para o Mundo: Soberania Digital, Indústria 4.0 e Evolução Acadêmica."**
+
+O **Meca Genial** é um ecossistema que une a prática industrial real com a mobilidade acadêmica. Como aluno da Fatec, desenvolvo este projeto para ser a base de uma **Cidade-Escola** que utiliza a tecnologia para promover a dignidade e a excelência técnica.
+
+## 🌍 Evolução & Intercâmbio
+Acredito que a educação técnica deve ser global. O projeto foca em:
+- **Mobilidade Acadêmica:** Estruturar o Meca Genial como uma plataforma que facilita a integração entre estudantes e centros de tecnologia internacionais.
+- **Intercâmbio de Conhecimento:** Documentar a jornada de evolução na Fatec como um modelo para futuros bolsistas e pesquisadores.
+- **Soberania Nacional com Visão Global:** Usar o que há de melhor no mundo para fortalecer a indústria brasileira.
+
+## 🛠️ Ecossistema Técnico
+- **[Meca Genial Core](https://github.com/moacyrfernandodearaujo/meca-genial-core):** Backend em **Java** focado em gestão acadêmica e operacional para cidades inteligentes.
+- **[Interface Web](https://github.com/moacyrfernandodearaujo/mecagenial.github.io):** Portal em HTML/CSS para visualização do projeto e documentação da Cidade-Escola.
+
+## 📝 Registro e Organização
+Utilizo o blog como minha "prancheta digital" para organizar o pensamento, superar desafios de saúde mental e registrar cada passo da minha evolução técnica.
+
+🔗 **Blog Oficial:** [mecagenial.com.br](https://www.mecagenial.com.br)
+📧 **Contato:** moacyr.araujo@fatec.sp.gov.br
+
+
+
 # 🏗️ Meca Genial: A Cidade-Escola do Futuro
 
 > **"Educação, Soberania Digital e Dignidade em movimento."**
