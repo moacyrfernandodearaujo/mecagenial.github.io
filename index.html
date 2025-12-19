@@ -3,68 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meca Genial | Cidade-Escola Industriais</title>
+    <title>Contato | Meca Genial</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Adicionei uns toques de design para as novas seções ficarem bonitas */
-        .secao-parcerias { padding: 60px 20px; background: #ffffff; text-align: center; }
-        .grid-parcerias { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 40px; }
-        .card-parceria { background: #f8f9fa; border-left: 5px solid #2ecc71; padding: 25px; width: 300px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: left; }
-        .card-parceria h3 { color: #2c3e50; margin-bottom: 10px; }
-        .btn-intercambio { background: #3498db; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block; margin-top: 20px; }
+        body { font-family: 'Inter', sans-serif; background-color: #f4f7f6; color: #333; margin: 0; }
+        .contato-container { max-width: 900px; margin: 50px auto; padding: 40px; background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .header-contato { text-align: center; border-bottom: 2px solid #eee; padding-bottom: 30px; margin-bottom: 40px; }
+        .header-contato h1 { color: #2c3e50; font-size: 2.5rem; margin-bottom: 10px; }
+        .header-contato p { color: #7f8c8d; font-size: 1.1rem; }
+        
+        .grid-contatos { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .card-contato { padding: 25px; border-radius: 12px; background: #fafafa; border: 1px solid #e0e0e0; transition: transform 0.3s ease; }
+        .card-contato:hover { transform: translateY(-5px); border-color: #3498db; }
+        .card-contato h3 { color: #2980b9; margin-top: 0; display: flex; align-items: center; gap: 10px; }
+        .card-contato p { font-size: 0.95rem; line-height: 1.6; color: #555; }
+        .card-contato a { color: #3498db; text-decoration: none; font-weight: bold; word-break: break-all; }
+        
+        .chamada-final { margin-top: 50px; text-align: center; padding: 30px; background: #2c3e50; color: white; border-radius: 12px; }
+        .btn-voltar { display: inline-block; margin-top: 20px; color: #3498db; text-decoration: none; font-weight: bold; }
     </style>
 </head>
 <body>
 
-    <header>
-        <nav style="display: flex; justify-content: space-between; align-items: center; padding: 20px 50px; background: #2c3e50; color: white;">
-            <div class="logo" style="font-size: 24px; font-weight: bold;">MecaGenial</div>
-            <ul style="list-style: none; display: flex; gap: 20px;">
-                <li><a href="#projeto" style="color: white; text-decoration: none;">O Projeto</a></li>
-                <li><a href="#parcerias" style="color: white; text-decoration: none;">Parcerias</a></li>
-                <li><a href="https://www.mecagenial.com.br" style="color: white; text-decoration: none;">Blog de Releitura</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="contato-container">
+        <div class="header-contato">
+            <h1>Canais de Conexão</h1>
+            <p>Meca Genial: Unindo Educação, Indústria e Soberania Digital</p>
+        </div>
 
-    <section class="hero" style="text-align: center; padding: 100px 20px; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80'); background-size: cover; color: white;">
-        <h1>Meca Genial: A Revolução da Educação Técnica</h1>
-        <p style="font-size: 1.2rem; max-width: 800px; margin: 20px auto;">Integrando a Indústria 4.0, Soberania Digital e Dignidade Humana através de Cidades-Escola.</p>
-        <a href="#parcerias" class="btn-intercambio" style="background: #27ae60;">Ver Plano de Parcerias</a>
-    </section>
-
-    <section id="parcerias" class="secao-parcerias">
-        <h2>Alianças Estratégicas e Incentivos</h2>
-        <p>Proposta de administração público-privada para soberania tecnológica nacional.</p>
-        
-        <div class="grid-parcerias">
-            <div class="card-parceria">
-                <h3>Google</h3>
-                <p>Parceria em infraestrutura de nuvem e IA para gestão de dados educacionais e industriais, garantindo tecnologia de ponta no aprendizado.</p>
+        <div class="grid-contatos">
+            <div class="card-contato">
+                <h3>📧 Institucional (Fatec)</h3>
+                <p>Para assuntos acadêmicos, intercâmbios e parcerias com o Centro Paula Souza.</p>
+                <a href="mailto:moacyr.araujo@fatec.sp.gov.br">moacyr.araujo@fatec.sp.gov.br</a>
             </div>
 
-            <div class="card-parceria" style="border-left-color: #f1c40f;">
-                <h3>Governo Federal</h3>
-                <p>Uso de leis de incentivo e fomento à reindustrialização para bolsas de estudo e infraestrutura de cidades-escola.</p>
+            <div class="card-contato">
+                <h3>📩 Gestão do Projeto</h3>
+                <p>Para investidores, parcerias público-privadas e suporte técnico.</p>
+                <a href="mailto:moacyrfernandodearaujo@gmail.com">moacyrfernandodearaujo@gmail.com</a>
             </div>
 
-            <div class="card-parceria" style="border-left-color: #3498db;">
-                <h3>Economia Colaborativa</h3>
-                <p>Modelo de gestão compartilhada onde empresas privadas investem em troca de inovação e mão de obra formada na prática real.</p>
+            <div class="card-contato">
+                <h3>💻 Desenvolvimento</h3>
+                <p>Acompanhe o código-fonte do Meca Genial Core e a evolução do sistema operacional.</p>
+                <a href="https://github.com/moacyrfernandodearaujo" target="_blank">github.com/moacyrfernandodearaujo</a>
+            </div>
+
+            <div class="card-contato">
+                <h3>📝 Blog de Releitura</h3>
+                <p>Acesse meus estudos, pensamentos e o dia a dia da Cidade-Escola.</p>
+                <a href="https://www.mecagenial.com.br" target="_blank">www.mecagenial.com.br</a>
             </div>
         </div>
-    </section>
 
-    <section id="projeto" style="padding: 60px 20px; text-align: center;">
-        <h2>Evolução Acadêmica e Intercâmbio</h2>
-        <p style="max-width: 700px; margin: 0 auto;">Como aluno da Fatec aos 44 anos, documento minha jornada para criar pontes internacionais. O Meca Genial é um projeto de mobilidade, visando intercâmbios que tragam conhecimento global para a indústria brasileira.</p>
-        <a href="https://github.com/moacyrfernandodearaujo" target="_blank" class="btn-intercambio">Ver Progresso no GitHub</a>
-    </section>
+        <div class="chamada-final">
+            <h2>Vamos construir essa utopia realizável?</h2>
+            <p>Se você representa o Governo, uma empresa de tecnologia (como Google) ou é um educador, entre em contato.</p>
+        </div>
 
-    <footer style="background: #2c3e50; color: white; padding: 40px 20px; text-align: center;">
-        <p><strong>Meca Genial</strong> - Transformando a educação através da soberania digital.</p>
-        <p>© 2025 | São Paulo - Brasil</p>
-    </footer>
+        <center><a href="index.html" class="btn-voltar">← Voltar para a Página Inicial</a></center>
+    </div>
 
 </body>
 </html>
