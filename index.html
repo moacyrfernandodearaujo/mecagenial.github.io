@@ -2,31 +2,29 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meca Genial | Cidade-Escola</title>
+    <title>Meca Genial | QG do Moacyr</title>
     <style>
-        /* AQUI É ONDE O FUNDO É CONFIGURADO */
+        /* --- BLOCO_MOTOR: Configurações gerais da máquina --- */
         body {
             margin: 0;
-            padding: 0;
             font-family: Arial, sans-serif;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
                               url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjMRxn-pE1gtApMunAl0N3RK42XibZdv2zD3wxKBthLKG8G2wgIFqSYx1_xMPEtePQVemVfFG8rCj_5g2SgGw4_JBiD2oHfxNO6LKyBi6-sSzcCerME3uDAutFhV5edU0wZcztIR_VUlnV0gfCszEkoDTA85VmEQt7Ld0o4bXw1WqF6cdL6Uz0ZgqecTu67/w1684-h1069-p-k-no-nu/Gemini_Generated_Image_80xy4z80xy4z80xy.png');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            color: white; /* Deixa o texto branco para aparecer no fundo escuro */
+            color: white;
             text-align: center;
         }
 
-        .container {
+        /* --- CARCAÇA: Onde o conteúdo fica protegido --- */
+        .CARCACA_PRINCIPAL {
             padding: 100px 20px;
+            padding-bottom: 150px; /* Espaço para não bater no rodapé */
         }
 
-        h1 { font-size: 3rem; margin-bottom: 20px; }
-        p { font-size: 1.5rem; max-width: 800px; margin: 0 auto; }
-
-        .btn-contato {
+        /* --- MANIVELA: O botão que o usuário clica --- */
+        .MANIVELA_CLICAVEL {
             display: inline-block;
             margin-top: 30px;
             padding: 15px 30px;
@@ -36,26 +34,49 @@
             border-radius: 5px;
             font-weight: bold;
         }
+
+        /* --- BANQUETA_RODAPE: A base fixa lá embaixo --- */
+        .BANQUETA_RODAPE {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 20px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            border-top: 2px solid #27ae60; /* Uma linha verde tipo junta de motor */
+        }
+
+        /* --- GRAXA_LINK: Os parafusos do rodapé (os links) --- */
+        .GRAXA_LINK {
+            color: #27ae60;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1rem;
+        }
     </style>
 </head>
 <body>
 
-    <div class="container">
+    <div class="CARCACA_PRINCIPAL">
         <h1>Meca Genial</h1>
-        <p>A primeira Cidade-Escola da indústria brasileira. <br> Transformando a força da mecânica em soberania digital.</p>
+        <p>Transformando a força da mecânica em soberania digital.</p>
         
-        <br><br>
+        <br>
         
         <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; display: inline-block;">
-            <h3>Em breve: Convocação FATEC 2026</h3>
-            <p>Acompanhando o resultado às 15h!</p>
+            <h3>Status da Prensa:</h3>
+            <p>Aguardando Convocação FATEC às 15h!</p>
         </div>
 
-        <br><br>
-        <a href="https://www.mecagenial.com.br" class="btn-contato">Ver Blog de Releitura</a>
+        <br>
+        <a href="https://www.mecagenial.com.br" class="MANIVELA_CLICAVEL">GIRAR MANIVELA (Ir para o Blog)</a>
     </div>
+
+    <footer class="BANQUETA_RODAPE">
+        <a href="https://www.mecagenial.com.br" class="GRAXA_LINK">BLOG</a>
+        <a href="https://www.mecagenial.com" class="GRAXA_LINK">SITE</a>
+        <a href="mailto:moacyrfernandodearaujo@gmail.com" class="GRAXA_LINK">EMAIL</a>
+        <a href="https://github.com/moacyrfernandodearaujo" class="GRAXA_LINK">GITHUB</a>
+    </footer>
 
 </body>
 </html>
-
-
