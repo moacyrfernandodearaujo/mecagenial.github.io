@@ -3,86 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MECA GENIAL | Cidade Universitária & Complexo Laboratorial</title>
-    <style>
-        :root { --tech-blue: #00d4ff; --hydrogen-green: #2ecc71; --dark-bg: #050505; }
-        body { background-color: var(--dark-bg); color: #e0e0e0; font-family: 'Segoe UI', Arial, sans-serif; margin: 0; line-height: 1.6; }
-        
-        header { 
-            border-bottom: 4px solid var(--tech-blue); 
-            padding: 60px 20px; 
-            text-align: center;
-            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1000');
-            background-size: cover;
-        }
-
-        h1 { font-size: 3.5em; color: var(--tech-blue); margin: 0; letter-spacing: 3px; }
-        .subtitle { font-size: 1.2em; color: var(--hydrogen-green); font-weight: bold; text-transform: uppercase; }
-
-        .container { max-width: 1100px; margin: auto; padding: 40px 20px; }
-        
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-        
-        .unit-card { 
-            background: #111; border: 1px solid #222; border-radius: 15px; padding: 30px;
-            transition: 0.4s; position: relative; overflow: hidden;
-        }
-
-        .unit-card:hover { border-color: var(--tech-blue); transform: translateY(-10px); }
-
-        .unit-card h3 { color: var(--tech-blue); margin-top: 0; }
-        
-        .badge { 
-            background: var(--hydrogen-green); color: #000; padding: 5px 12px; 
-            border-radius: 20px; font-size: 0.8em; font-weight: bold;
-        }
-
-        .btn-portal {
-            display: inline-block; background: var(--tech-blue); color: #000; 
-            padding: 15px 40px; text-decoration: none; font-weight: bold; 
-            border-radius: 50px; margin-top: 40px; transition: 0.3s;
-        }
-
-        .btn-portal:hover { background: #fff; box-shadow: 0 0 30px var(--tech-blue); }
-
-        footer { text-align: center; padding: 40px; color: #555; border-top: 1px solid #222; }
-    </style>
+    <title>Meca Genial: Cidade-Escola da Indústria do Futuro</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <header>
-        <h1>MECA GENIAL</h1>
-        <p class="subtitle">Cidade Universitária & Complexo de Fábricas Laboratoriais</p>
+        <nav>
+            <div class="logo">MecaGenial</div>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#projeto">O Projeto</a></li>
+                <li><a href="#parcerias">Parcerias</a></li>
+                <li><a href="https://www.mecagenial.com.br" target="_blank">Blog</a></li>
+                <li><a href="#contato" class="btn-destaque">Junte-se a Nós</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <div class="container">
-        <div class="grid">
-            <div class="unit-card">
-                <h3>Unidade de Energia Limpa</h3>
-                <p>Pesquisa e produção de <strong>Hidrogênio</strong> e novas matrizes energéticas para a indústria sustentável.</p>
-                <span class="badge">Vanguarda Tecnológica</span>
-            </div>
-
-            <div class="unit-card">
-                <h3>Fábricas Laboratoriais</h3>
-                <p>Ambientes de manufatura avançada onde alunos das FATECs aplicam engenharia de alta complexidade em tempo real.</p>
-                <span class="badge">Educação 4.0</span>
-            </div>
-
-            <div class="unit-card">
-                <h3>Núcleo de Engenharia</h3>
-                <p>Desenvolvimento do sistema <strong>Meca Genial Core</strong> para gestão integrada de recursos e processos industriais.</p>
-                <span class="badge">Arquitetura de Software</span>
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>A Primeira Cidade-Escola da Indústria Brasileira</h1>
+            <p>Um ecossistema que integra educação técnica de ponta, produção real e soberania digital.</p>
+            <div class="hero-btns">
+                <a href="#projeto" class="btn-principal">Conhecer o Projeto</a>
+                <a href="#contato" class="btn-secundario">Quero Participar</a>
             </div>
         </div>
+    </section>
 
-        <center>
-            <a href="https://github.com/moacyrfernandodearaujo/meca-genial-core" class="btn-portal">ACESSAR REPOSITÓRIO CORE</a>
-        </center>
-    </div>
+    <section class="pilares">
+        <div class="pilar-item"><span>100%</span> Prático</div>
+        <div class="pilar-item"><span>360°</span> Integral</div>
+        <div class="pilar-item"><span>♻️</span> Sustentável</div>
+        <div class="pilar-item"><span>🚀</span> Inovador</div>
+    </section>
+
+    <section id="parcerias" class="secao-parcerias" style="padding: 50px; background: #f4f4f4; text-align: center;">
+        <h2>Alianças Estratégicas</h2>
+        <p style="max-width: 800px; margin: 0 auto 30px;">Buscamos alinhar forças com parceiros visionários para transformar a educação técnica no Brasil.</p>
+        
+        <div class="grade-parcerias" style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+            <div class="card-parceria" style="background: white; padding: 20px; border-radius: 10px; width: 300px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                <h3>Google</h3>
+                <p>Tecnologia de nuvem e inteligência para gestão da soberania digital e aprendizado 4.0.</p>
+            </div>
+            <div class="card-parceria" style="background: white; padding: 20px; border-radius: 10px; width: 300px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                <h3>Governo Federal</h3>
+                <p>Incentivos à reindustrialização e formação profissional tecnológica de alto nível.</p>
+            </div>
+            <div class="card-parceria" style="background: white; padding: 20px; border-radius: 10px; width: 300px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                <h3>Economia Colaborativa</h3>
+                <p>Administração público-privada para compartilhamento de infraestrutura e inovação.</p>
+            </div>
+        </div>
+    </section>
 
     <footer>
-        &copy; 2025 Meca Genial | Operação Continental | Domínio Oficial: mecagenial.org
+        <div class="footer-grid">
+            <div>
+                <h3>MecaGenial</h3>
+                <p>Educação, Soberania Digital e Dignidade em movimento.</p>
+            </div>
+            <div>
+                <h4>Links Úteis</h4>
+                <ul>
+                    <li><a href="https://github.com/moacyrfernandodearaujo" target="_blank">GitHub</a></li>
+                    <li><a href="https://www.mecagenial.com.br" target="_blank">Blog de Releitura</a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="copyright">© 2025 Meca Genial. Uma utopia realizável em construção.</p>
     </footer>
 
 </body>
