@@ -3,79 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato | Meca Genial</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Meca Genial | Cidade-Escola</title>
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #f4f7f6; color: #333; margin: 0; }
-        .contato-container { max-width: 900px; margin: 50px auto; padding: 40px; background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .header-contato { text-align: center; border-bottom: 2px solid #eee; padding-bottom: 30px; margin-bottom: 40px; }
-        .header-contato h1 { color: #2c3e50; font-size: 2.5rem; margin-bottom: 10px; }
-        .header-contato p { color: #7f8c8d; font-size: 1.1rem; }
-        
-        .grid-contatos { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-        .card-contato { padding: 25px; border-radius: 12px; background: #fafafa; border: 1px solid #e0e0e0; transition: transform 0.3s ease; }
-        .card-contato:hover { transform: translateY(-5px); border-color: #3498db; }
-        .card-contato h3 { color: #2980b9; margin-top: 0; display: flex; align-items: center; gap: 10px; }
-        .card-contato p { font-size: 0.95rem; line-height: 1.6; color: #555; }
-        .card-contato a { color: #3498db; text-decoration: none; font-weight: bold; word-break: break-all; }
-        
-        .chamada-final { margin-top: 50px; text-align: center; padding: 30px; background: #2c3e50; color: white; border-radius: 12px; }
-        .btn-voltar { display: inline-block; margin-top: 20px; color: #3498db; text-decoration: none; font-weight: bold; }
+        /* AQUI É ONDE O FUNDO É CONFIGURADO */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                              url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white; /* Deixa o texto branco para aparecer no fundo escuro */
+            text-align: center;
+        }
+
+        .container {
+            padding: 100px 20px;
+        }
+
+        h1 { font-size: 3rem; margin-bottom: 20px; }
+        p { font-size: 1.5rem; max-width: 800px; margin: 0 auto; }
+
+        .btn-contato {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 30px;
+            background-color: #27ae60;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
 
-    
-    \\ codigo do fundo 
-body {
-    background-image: url(' https://www.mecagenial.com.br/2025/12/imagem-de-fundo.html ');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-}
-
-    
-    <div class="contato-container">
-        <div class="header-contato">
-            <h1>Canais de Conexão</h1>
-            <p>Meca Genial: Unindo Educação, Indústria e Soberania Digital</p>
+    <div class="container">
+        <h1>Meca Genial</h1>
+        <p>A primeira Cidade-Escola da indústria brasileira. <br> Transformando a força da mecânica em soberania digital.</p>
+        
+        <br><br>
+        
+        <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; display: inline-block;">
+            <h3>Em breve: Convocação FATEC 2026</h3>
+            <p>Acompanhando o resultado às 15h!</p>
         </div>
 
-        <div class="grid-contatos">
-            <div class="card-contato">
-                <h3>📧 Institucional (Fatec)</h3>
-                <p>Para assuntos acadêmicos, intercâmbios e parcerias com o Centro Paula Souza.</p>
-                <a href="mailto:moacyr.araujo@fatec.sp.gov.br">moacyr.araujo@fatec.sp.gov.br</a>
-            </div>
-
-            <div class="card-contato">
-                <h3>📩 Gestão do Projeto</h3>
-                <p>Para investidores, parcerias público-privadas e suporte técnico.</p>
-                <a href="mailto:moacyrfernandodearaujo@gmail.com">moacyrfernandodearaujo@gmail.com</a>
-            </div>
-
-            <div class="card-contato">
-                <h3>💻 Desenvolvimento</h3>
-                <p>Acompanhe o código-fonte do Meca Genial Core e a evolução do sistema operacional.</p>
-                <a href="https://github.com/moacyrfernandodearaujo" target="_blank">github.com/moacyrfernandodearaujo</a>
-            </div>
-
-            <div class="card-contato">
-                <h3>📝 Blog de Releitura</h3>
-                <p>Acesse meus estudos, pensamentos e o dia a dia da Cidade-Escola.</p>
-                <a href="https://www.mecagenial.com.br" target="_blank">www.mecagenial.com.br</a>
-            </div>
-        </div>
-
-        <div class="chamada-final">
-            <h2>Vamos construir essa utopia realizável?</h2>
-            <p>Se você representa o Governo, uma empresa de tecnologia (como Google) ou é um educador, entre em contato.</p>
-        </div>
-
-        <center><a href="index.html" class="btn-voltar">← Voltar para a Página Inicial</a></center>
+        <br><br>
+        <a href="https://www.mecagenial.com.br" class="btn-contato">Ver Blog de Releitura</a>
     </div>
 
 </body>
 </html>
-
-
