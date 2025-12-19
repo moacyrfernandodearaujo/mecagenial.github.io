@@ -3,78 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meca Genial: Cidade-Escola da Indústria do Futuro</title>
+    <title>Meca Genial | Cidade-Escola Industriais</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Adicionei uns toques de design para as novas seções ficarem bonitas */
+        .secao-parcerias { padding: 60px 20px; background: #ffffff; text-align: center; }
+        .grid-parcerias { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 40px; }
+        .card-parceria { background: #f8f9fa; border-left: 5px solid #2ecc71; padding: 25px; width: 300px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: left; }
+        .card-parceria h3 { color: #2c3e50; margin-bottom: 10px; }
+        .btn-intercambio { background: #3498db; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block; margin-top: 20px; }
+    </style>
 </head>
 <body>
 
     <header>
-        <nav>
-            <div class="logo">MecaGenial</div>
-            <ul>
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#projeto">O Projeto</a></li>
-                <li><a href="#parcerias">Parcerias</a></li>
-                <li><a href="https://www.mecagenial.com.br" target="_blank">Blog</a></li>
-                <li><a href="#contato" class="btn-destaque">Junte-se a Nós</a></li>
+        <nav style="display: flex; justify-content: space-between; align-items: center; padding: 20px 50px; background: #2c3e50; color: white;">
+            <div class="logo" style="font-size: 24px; font-weight: bold;">MecaGenial</div>
+            <ul style="list-style: none; display: flex; gap: 20px;">
+                <li><a href="#projeto" style="color: white; text-decoration: none;">O Projeto</a></li>
+                <li><a href="#parcerias" style="color: white; text-decoration: none;">Parcerias</a></li>
+                <li><a href="https://www.mecagenial.com.br" style="color: white; text-decoration: none;">Blog de Releitura</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="inicio" class="hero">
-        <div class="hero-content">
-            <h1>A Primeira Cidade-Escola da Indústria Brasileira</h1>
-            <p>Um ecossistema que integra educação técnica de ponta, produção real e soberania digital.</p>
-            <div class="hero-btns">
-                <a href="#projeto" class="btn-principal">Conhecer o Projeto</a>
-                <a href="#contato" class="btn-secundario">Quero Participar</a>
-            </div>
-        </div>
+    <section class="hero" style="text-align: center; padding: 100px 20px; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80'); background-size: cover; color: white;">
+        <h1>Meca Genial: A Revolução da Educação Técnica</h1>
+        <p style="font-size: 1.2rem; max-width: 800px; margin: 20px auto;">Integrando a Indústria 4.0, Soberania Digital e Dignidade Humana através de Cidades-Escola.</p>
+        <a href="#parcerias" class="btn-intercambio" style="background: #27ae60;">Ver Plano de Parcerias</a>
     </section>
 
-    <section class="pilares">
-        <div class="pilar-item"><span>100%</span> Prático</div>
-        <div class="pilar-item"><span>360°</span> Integral</div>
-        <div class="pilar-item"><span>♻️</span> Sustentável</div>
-        <div class="pilar-item"><span>🚀</span> Inovador</div>
-    </section>
-
-    <section id="parcerias" class="secao-parcerias" style="padding: 50px; background: #f4f4f4; text-align: center;">
-        <h2>Alianças Estratégicas</h2>
-        <p style="max-width: 800px; margin: 0 auto 30px;">Buscamos alinhar forças com parceiros visionários para transformar a educação técnica no Brasil.</p>
+    <section id="parcerias" class="secao-parcerias">
+        <h2>Alianças Estratégicas e Incentivos</h2>
+        <p>Proposta de administração público-privada para soberania tecnológica nacional.</p>
         
-        <div class="grade-parcerias" style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-            <div class="card-parceria" style="background: white; padding: 20px; border-radius: 10px; width: 300px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        <div class="grid-parcerias">
+            <div class="card-parceria">
                 <h3>Google</h3>
-                <p>Tecnologia de nuvem e inteligência para gestão da soberania digital e aprendizado 4.0.</p>
+                <p>Parceria em infraestrutura de nuvem e IA para gestão de dados educacionais e industriais, garantindo tecnologia de ponta no aprendizado.</p>
             </div>
-            <div class="card-parceria" style="background: white; padding: 20px; border-radius: 10px; width: 300px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+
+            <div class="card-parceria" style="border-left-color: #f1c40f;">
                 <h3>Governo Federal</h3>
-                <p>Incentivos à reindustrialização e formação profissional tecnológica de alto nível.</p>
+                <p>Uso de leis de incentivo e fomento à reindustrialização para bolsas de estudo e infraestrutura de cidades-escola.</p>
             </div>
-            <div class="card-parceria" style="background: white; padding: 20px; border-radius: 10px; width: 300px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+
+            <div class="card-parceria" style="border-left-color: #3498db;">
                 <h3>Economia Colaborativa</h3>
-                <p>Administração público-privada para compartilhamento de infraestrutura e inovação.</p>
+                <p>Modelo de gestão compartilhada onde empresas privadas investem em troca de inovação e mão de obra formada na prática real.</p>
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="footer-grid">
-            <div>
-                <h3>MecaGenial</h3>
-                <p>Educação, Soberania Digital e Dignidade em movimento.</p>
-            </div>
-            <div>
-                <h4>Links Úteis</h4>
-                <ul>
-                    <li><a href="https://github.com/moacyrfernandodearaujo" target="_blank">GitHub</a></li>
-                    <li><a href="https://www.mecagenial.com.br" target="_blank">Blog de Releitura</a></li>
-                </ul>
-            </div>
-        </div>
-        <p class="copyright">© 2025 Meca Genial. Uma utopia realizável em construção.</p>
+    <section id="projeto" style="padding: 60px 20px; text-align: center;">
+        <h2>Evolução Acadêmica e Intercâmbio</h2>
+        <p style="max-width: 700px; margin: 0 auto;">Como aluno da Fatec aos 44 anos, documento minha jornada para criar pontes internacionais. O Meca Genial é um projeto de mobilidade, visando intercâmbios que tragam conhecimento global para a indústria brasileira.</p>
+        <a href="https://github.com/moacyrfernandodearaujo" target="_blank" class="btn-intercambio">Ver Progresso no GitHub</a>
+    </section>
+
+    <footer style="background: #2c3e50; color: white; padding: 40px 20px; text-align: center;">
+        <p><strong>Meca Genial</strong> - Transformando a educação através da soberania digital.</p>
+        <p>© 2025 | São Paulo - Brasil</p>
     </footer>
 
 </body>
