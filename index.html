@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="refresh" content="60"> 
     <title>MECA GENIAL - COMMAND CENTER</title>
+    
     <style>
         :root {
             --neon-green: #00ff00;
@@ -12,146 +13,158 @@
             --meca-gold: #f0c000;
             --bg-dark: #050505;
         }
+
         body {
             background-color: var(--bg-dark);
             color: var(--neon-green);
             font-family: 'Segoe UI', sans-serif;
             margin: 0;
-            line-height: 1.6;
+            overflow-x: hidden;
         }
+
+        /* LIÇÃO 1: ESTA É A ANIMAÇÃO DAS ENGRENAGENS */
+        @keyframes girar {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .engrenagem {
+            position: fixed;
+            z-index: -1; /* Fica atrás de tudo para não atrapalhar */
+            opacity: 0.1; /* Bem clarinha, como um fantasma do motor */
+            animation: girar 10s linear infinite;
+        }
+
         header {
             background: rgba(20, 20, 20, 0.95);
             border-bottom: 2px solid var(--meca-gold);
             padding: 1rem;
-            position: sticky; 
-            top: 0;
-            z-index: 1000;
-            backdrop-filter: blur(10px);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            position: sticky; top: 0; z-index: 1000;
+            display: flex; justify-content: space-between; align-items: center;
         }
-        .logo-area { display: flex; align-items: center; gap: 15px; }
-        .status-box {
-            background: #1a1a1a;
-            padding: 5px 15px;
-            border-radius: 20px;
-            border: 1px solid #333;
-            font-size: 0.8rem;
-            display: flex;
-            align-items: center;
+
+        /* LIÇÃO 2: O MONITOR DA LIVE (O SEU CÓDIGO MESCLADO AQUI) */
+        .live-monitor-container {
+            width: 100%;
+            max-width: 900px; /* Largura máxima do monitor */
+            margin: 40px auto;
+            background: #000;
+            border: 5px solid var(--meca-gold); /* Borda dourada da MECA GENIAL */
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0px 0px 30px rgba(241, 192, 0, 0.3);
         }
+
+        .monitor-topo {
+            background: var(--meca-gold);
+            color: #000;
+            padding: 12px;
+            font-weight: bold;
+            text-align: center;
+            font-family: 'Arial Black', sans-serif;
+            letter-spacing: 2px;
+        }
+
+        .meca-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-left: 4px solid var(--meca-gold);
+            padding: 25px;
+            margin: 20px auto;
+            max-width: 860px;
+            border-radius: 4px;
+        }
+
+        .btn-action {
+            background: var(--meca-gold);
+            color: #000;
+            border: none;
+            padding: 10px 25px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
         .led {
             height: 10px; width: 10px; background: var(--neon-green);
             border-radius: 50%; display: inline-block; margin-right: 10px;
             box-shadow: 0 0 10px var(--neon-green);
             animation: pulse 2s infinite;
         }
-        .main-engine {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-        .live-monitor {
-            background: #000;
-            border: 1px solid var(--warning-red);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 0 30px rgba(255, 0, 0, 0.1);
-            margin-bottom: 40px;
-        }
-        .monitor-header {
-            background: var(--warning-red);
-            color: white;
-            padding: 5px 20px;
-            font-weight: bold;
-            font-size: 0.9rem;
-            display: flex;
-            justify-content: space-between;
-        }
-        .meca-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid #222;
-            border-left: 4px solid var(--meca-gold);
-            padding: 25px;
-            border-radius: 4px;
-            margin-bottom: 25px;
-        }
-        .timestamp { color: var(--meca-gold); font-family: monospace; font-size: 0.85rem; }
-        .btn-action {
-            background: var(--meca-gold);
-            color: #000;
-            border: none;
-            padding: 10px 25px;
-            border-radius: 4px;
-            font-weight: bold;
-            cursor: pointer;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            margin-top: 15px;
-        }
+
         @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
     </style>
 </head>
 <body>
 
+<img src="https://cdn-icons-png.flaticon.com/512/603/603197.png" class="engrenagem" style="top: 10%; left: 5%; width: 150px; filter: invert(1);">
+<img src="https://cdn-icons-png.flaticon.com/512/603/603197.png" class="engrenagem" style="bottom: 10%; right: 5%; width: 200px; filter: invert(1); animation-direction: reverse;">
+
 <header>
-    <div class="logo-area">
+    <div class="logo-area" style="display: flex; align-items: center; gap: 15px;">
         <img src="https://cdn-icons-png.flaticon.com/512/603/603197.png" width="40" style="filter: invert(1);">
-        <h1 style="margin:0; font-size: 1.5rem; letter-spacing: 2px;">MECA GENIAL <span style="font-weight:100; color:#888;">| SYSTEM</span></h1>
+        <h1 style="margin:0; font-size: 1.5rem;">MECA GENIAL <span style="font-weight:100; color:#888;">| COMMAND</span></h1>
     </div>
-    <div class="status-box">
+    <div style="background: #1a1a1a; padding: 5px 15px; border-radius: 20px; border: 1px solid #333; font-size: 0.8rem;">
         <span class="led"></span> OPERACIONAL: MAVERIK900CV
     </div>
 </header>
 
-<div class="main-engine">
-    
-    <div class="live-monitor">
-        <div class="monitor-header">
-            <span>🔴 TRANSMISSÃO OFICIAL - MECA GENIAL</span>
-            <span>SINAL: SATÉLITE_GOOGLE_NANO</span>
+<div class="main-engine" style="padding: 20px;">
+
+    <div class="live-monitor-container">
+        <div class="monitor-topo">
+            🚨 MONITORAMENTO AO VIVO: QG MECA GENIAL 🚨
         </div>
+        
         <div style="position: relative; padding-bottom: 56.25%; height: 0;">
             <iframe 
                 style="position: absolute; top:0; left:0; width:100%; height:100%;"
-                src="https://www.youtube.com/embed/G88ribbHqgc?autoplay=1&mute=1&loop=1&playlist=G88ribbHqgc&rel=0&controls=1" 
+                src="https://www.youtube.com/embed/live_stream?channel=UCX9Nre-P39h-9mE_wUqK84A&autoplay=1&mute=1" 
                 frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allow="autoplay; encrypted-media; picture-in-picture" 
                 allowfullscreen>
             </iframe>
         </div>
+
+        <div style="padding: 15px; text-align: center; background: #111; border-top: 1px solid #333;">
+            <p style="color: #fff; font-family: 'Courier New', monospace; margin-bottom: 10px;">Sinal direto da Rodovia das Universidades</p>
+            <a href="https://www.youtube.com/@Mmoacyr/live" target="_blank" style="color: var(--meca-gold); font-weight: bold; text-decoration: none; border: 1px solid var(--meca-gold); padding: 8px 15px; border-radius: 5px; display: inline-block;">
+                ABRIR EM TELA CHEIA (YOUTUBE)
+            </a>
+        </div>
     </div>
 
-    <div id="logs">
-        <div class="meca-card">
-            <div class="timestamp"> [REGISTRO: <span class="auto-date"></span>] </div>
-            <h2 style="color: #fff;">O Estagiário é Casca Grossa!</h2>
-            <div class="content">
-                <p>O Blogger tentou travar o sistema, mas a MECA GENIAL não para. Com o estagiário digital ajustando os códigos e o Mestre no comando do café, a soberania está garantida.</p>
-            </div>
-            <button class="btn-action" onclick="ouvir(this)">▶ REPRODUZIR ÁUDIO-LOG</button>
+    <div class="meca-card">
+        <div style="color: var(--meca-gold); font-family: monospace; font-size: 0.85rem;"> 
+            [SISTEMA: <span id="data-atual"></span>] 
         </div>
+        <h2 style="color: #fff; margin: 10px 0;">O Estagiário é Casca Grossa!</h2>
+        <div id="texto-log">
+            <p>O Maverick 900CV está com o pé no porão. Enquanto o Mestre prepara o café e o Dr. Zara calibra os bits, as Universidades Federais Rodoviárias tomam forma no asfalto da soberania.</p>
+        </div>
+        <button class="btn-action" onclick="ouvir()">▶ REPRODUZIR ÁUDIO-LOG</button>
     </div>
 
 </div>
 
 <script>
-    function setDates() {
+    // LIÇÃO 5: SCRIPT PARA ATUALIZAR A DATA E HORA AUTOMÁTICO
+    function atualizarData() {
         const agora = new Date();
-        const texto = agora.toLocaleDateString('pt-BR') + " | " + agora.toLocaleTimeString('pt-BR');
-        document.querySelectorAll('.auto-date').forEach(el => el.textContent = texto);
+        document.getElementById('data-atual').textContent = agora.toLocaleString('pt-BR');
     }
-
-    function ouvir(btn) {
-        const texto = btn.parentElement.querySelector('.content').innerText;
+    
+    // LIÇÃO 6: SCRIPT PARA A VOZ DO SISTEMA LER O TEXTO
+    function ouvir() {
+        const texto = document.getElementById('texto-log').innerText;
         window.speechSynthesis.cancel();
         const fala = new SpeechSynthesisUtterance(texto);
         fala.lang = 'pt-BR';
+        fala.rate = 0.9; // Voz um pouco mais séria
         window.speechSynthesis.speak(fala);
     }
 
-    setDates();
+    atualizarData();
 </script>
 
 </body>
