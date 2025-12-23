@@ -1,1 +1,39 @@
+/* #######################################################
+   #  MAVERIK900CV - MANUAL DE PINTURA E ACABAMENTO (CSS) #
+   #######################################################
+*/
 
+:root {
+    --neon-green: #00ff00;
+    --warning-red: #ff0000;
+    --meca-gold: #f0c000;
+    --bg-dark: #050505;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--neon-green);
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+}
+
+/* ESTILO DO CARD DE HISTÓRIAS - O chassi do seu conteúdo */
+.meca-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid #222;
+    border-left: 4px solid var(--meca-gold);
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+}
+
+/* BOTÃO DE IGNIÇÃO - Dispara o áudio */
+.btn-action {
+    background: var(--meca-gold);
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+}
