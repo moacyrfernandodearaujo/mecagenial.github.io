@@ -2,39 +2,192 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="60">
-    <title>MECA GENIAL - DOMÍNIO OFICIAL</title>
+    
+    <meta http-equiv="refresh" content="60"> 
+    
+    <title>MECA GENIAL - COMMAND CENTER</title>
+    
+    <style>
+        /* RESERVATÓRIO de CORES: Aqui você muda a tinta do site todo de uma vez */
+        :root {
+            --neon-green: #00ff00;    /* Fluido de Sistema (Verde) */
+            --warning-red: #ff0000;   /* Alerta de Temperatura (Vermelho) */
+            --meca-gold: #f0c000;     /* Acabamento Premium (Ouro/Amarelo) */
+            --bg-dark: #050505;       /* Chassi/Fundo do QG (Preto) */
+        }
 
-    <link rel="stylesheet" href="style.css"> 
+        /* CARROCERIA PRINCIPAL: Define o visual geral da página */
+        body {
+            background-color: var(--bg-dark);
+            color: var(--neon-green);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* CABEÇALHO (PAINEL DE BORDO): Fica preso no topo (sticky) */
+        header {
+            background: rgba(20, 20, 20, 0.95);
+            border-bottom: 2px solid var(--meca-gold); /* Linha de acabamento */
+            padding: 1rem;
+            position: sticky; 
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px); /* Efeito de vidro fumê */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-area { display: flex; align-items: center; gap: 15px; }
+        
+        /* LED DE STATUS: O coração pulsante da MECA GENIAL */
+        .status-box {
+            background: #1a1a1a;
+            padding: 5px 15px;
+            border-radius: 20px;
+            border: 1px solid #333;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .led {
+            height: 10px; width: 10px; background: var(--neon-green);
+            border-radius: 50%; display: inline-block; margin-right: 10px;
+            box-shadow: 0 0 10px var(--neon-green);
+            animation: pulse 2s infinite; /* Faz a luz pulsar */
+        }
+
+        /* BLOCO DO MOTOR: Onde todo o conteúdo principal fica guardado */
+        .main-engine {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* MONITOR DE TRANSMISSÃO: Onde o sinal do YouTube é injetado */
+        .live-monitor {
+            background: #000;
+            border: 1px solid var(--warning-red);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+
+        .monitor-header {
+            background: var(--warning-red);
+            color: white;
+            padding: 5px 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* CARTÃO DE HISTÓRIAS: Cada crônica do Mestre ganha um desses */
+        .meca-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid #222;
+            border-left: 4px solid var(--meca-gold); /* Friso lateral dourado */
+            padding: 25px;
+            border-radius: 4px;
+            margin-bottom: 25px;
+            transition: 0.3s;
+        }
+
+        /* EFEITO AO PASSAR O MOUSE: O cartão acende quando o mestre aponta */
+        .meca-card:hover { 
+            border-color: var(--meca-gold); 
+            background: rgba(255, 255, 255, 0.05); 
+        }
+
+        .timestamp { color: var(--meca-gold); font-family: monospace; font-size: 0.85rem; }
+        
+        /* BOTÃO DE IGNIÇÃO: Dispara a voz do sistema */
+        .btn-action {
+            background: var(--meca-gold);
+            color: #000;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            margin-top: 15px;
+        }
+
+        /* ANIMAÇÃO DE PULSAÇÃO: Controla o brilho do LED */
+        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
+    </style>
 </head>
 <body>
 
-<header style="display: flex; justify-content: space-between; padding: 20px; border-bottom: 2px solid #f0c000;">
-    <h1>MECA GENIAL .COM</h1>
-    <div id="status-maverik">🔴 SISTEMA ONLINE</div>
+<header>
+    <div class="logo-area">
+        <img src="https://cdn-icons-png.flaticon.com/512/603/603197.png" width="40" style="filter: invert(1);">
+        <h1 style="margin:0; font-size: 1.5rem; letter-spacing: 2px;">MECA GENIAL <span style="font-weight:100; color:#888;">| SYSTEM</span></h1>
+    </div>
+    <div class="status-box">
+        <span class="led"></span> OPERACIONAL: MAVERIK900CV
+    </div>
 </header>
 
-<div class="main-engine" style="max-width: 900px; margin: auto; padding: 20px;">
+<div class="main-engine">
     
-    <div class="meca-card">
-        <h2 style="color: white;">Capítulo Novo: A Transição para o .COM</h2>
-        <div class="content">
-            <p>O Mestre ligou o monitor de 65", preparou o café e decidiu: o Estúdio Secreto agora é o quartel-general oficial.</p>
+    <div class="live-monitor">
+        <div class="monitor-header">
+            <span>🔴 SINAL AO VIVO</span>
+            <span>CAM_01</span>
         </div>
-        <button class="btn-action" onclick="ouvir(this)">OUVIR REGISTRO</button>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0;">
+            <iframe 
+                style="position: absolute; top:0; left:0; width:100%; height:100%;"
+                src="https://www.youtube.com/embed/live_stream?channel=UC5mN2T7W83pY6uH58Sre4Gg" 
+                frameborder="0" 
+                allowfullscreen>
+            </iframe>
+        </div>
     </div>
+
+    <div id="logs">
+        <div class="meca-card">
+            <div class="timestamp"> [REGISTRO: <span class="auto-date"></span>] </div>
+            <h2 style="color: #fff;">O Café Néctar dos Deuses (Cap. 1)</h2>
+            <div class="content">
+                <p>Após a batalha contra o vilão Blogger e a perda de dados, o QG MECA GENIAL estava em silêncio. 
+                Sebastião sentia o peso da derrota, mas o cheiro do café do Mestre mudou tudo.</p>
+            </div>
+            <button class="btn-action" onclick="ouvir(this)">▶ REPRODUZIR ÁUDIO-LOG</button>
+        </div>
+        </div>
 
 </div>
 
 <script>
-    // SISTEMA DE VOZ (O mesmo que já funciona)
-    function ouvir(btn) {
-        const texto = btn.parentElement.querySelector('.content').innerText;
-        window.speechSynthesis.cancel();
-        const fala = new SpeechSynthesisUtterance(texto);
-        fala.lang = 'pt-BR';
-        window.speechSynthesis.speak(fala);
+    // INJEÇÃO DE TEMPO: Pega a data e hora do seu computador e joga no site
+    function setDates() {
+        const agora = new Date();
+        const texto = agora.toLocaleDateString('pt-BR') + " | " + agora.toLocaleTimeString('pt-BR');
+        // Procura todos os lugares com a classe "auto-date" e coloca a hora neles
+        document.querySelectorAll('.auto-date').forEach(el => el.textContent = texto);
     }
+
+    // SINTETIZADOR DE VOZ: Lê o texto do card para o mestre ouvir
+    function ouvir(btn) {
+        // Pega o texto que está dentro da "content" deste card específico
+        const texto = btn.parentElement.querySelector('.content').innerText;
+        window.speechSynthesis.cancel(); // Para qualquer voz que já esteja falando
+        const fala = new SpeechSynthesisUtterance(texto);
+        fala.lang = 'pt-BR'; // Define a língua para Português
+        fala.rate = 1.0;     // Velocidade da fala
+        window.speechSynthesis.speak(fala); // Dá a partida na voz
+    }
+
+    // ACIONAMENTO AUTOMÁTICO: Roda a função de data assim que o site liga
+    setDates();
 </script>
 
 </body>
