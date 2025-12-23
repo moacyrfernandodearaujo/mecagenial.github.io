@@ -3,30 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <meta http-equiv="refresh" content="60"> 
-    
     <title>MECA GENIAL - COMMAND CENTER</title>
-    
     <style>
-        /* RESERVATÓRIO de CORES: Ajuste a tinta do site aqui */
         :root {
-            --neon-green: #00ff00;    /* Fluido de Sistema (Verde) */
-            --warning-red: #ff0000;   /* Alerta de Temperatura (Vermelho) */
-            --meca-gold: #f0c000;     /* Acabamento Premium (Ouro/Amarelo) */
-            --bg-dark: #050505;       /* Chassi/Fundo do QG (Preto) */
+            --neon-green: #00ff00;
+            --warning-red: #ff0000;
+            --meca-gold: #f0c000;
+            --bg-dark: #050505;
         }
-
-        /* CARROCERIA PRINCIPAL */
         body {
             background-color: var(--bg-dark);
             color: var(--neon-green);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', sans-serif;
             margin: 0;
             line-height: 1.6;
         }
-
-        /* CABEÇALHO (PAINEL DE BORDO): Fixo no topo */
         header {
             background: rgba(20, 20, 20, 0.95);
             border-bottom: 2px solid var(--meca-gold);
@@ -39,10 +31,7 @@
             justify-content: space-between;
             align-items: center;
         }
-
         .logo-area { display: flex; align-items: center; gap: 15px; }
-        
-        /* LED DE STATUS: O coração pulsante */
         .status-box {
             background: #1a1a1a;
             padding: 5px 15px;
@@ -52,22 +41,17 @@
             display: flex;
             align-items: center;
         }
-
         .led {
             height: 10px; width: 10px; background: var(--neon-green);
             border-radius: 50%; display: inline-block; margin-right: 10px;
             box-shadow: 0 0 10px var(--neon-green);
             animation: pulse 2s infinite;
         }
-
-        /* BLOCO DO MOTOR: Área central do conteúdo */
         .main-engine {
             max-width: 1000px;
             margin: 40px auto;
             padding: 0 20px;
         }
-
-        /* MONITOR DE TRANSMISSÃO: Moldura do YouTube */
         .live-monitor {
             background: #000;
             border: 1px solid var(--warning-red);
@@ -76,7 +60,6 @@
             box-shadow: 0 0 30px rgba(255, 0, 0, 0.1);
             margin-bottom: 40px;
         }
-
         .monitor-header {
             background: var(--warning-red);
             color: white;
@@ -86,8 +69,6 @@
             display: flex;
             justify-content: space-between;
         }
-
-        /* CARTÃO DE HISTÓRIAS */
         .meca-card {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid #222;
@@ -95,17 +76,8 @@
             padding: 25px;
             border-radius: 4px;
             margin-bottom: 25px;
-            transition: 0.3s;
         }
-
-        .meca-card:hover { 
-            border-color: var(--meca-gold); 
-            background: rgba(255, 255, 255, 0.05); 
-        }
-
         .timestamp { color: var(--meca-gold); font-family: monospace; font-size: 0.85rem; }
-        
-        /* BOTÃO DE IGNIÇÃO: Voz do sistema */
         .btn-action {
             background: var(--meca-gold);
             color: #000;
@@ -118,7 +90,6 @@
             font-size: 0.8rem;
             margin-top: 15px;
         }
-
         @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
     </style>
 </head>
@@ -144,8 +115,9 @@
         <div style="position: relative; padding-bottom: 56.25%; height: 0;">
             <iframe 
                 style="position: absolute; top:0; left:0; width:100%; height:100%;"
-                src="https://www.youtube.com/live/G88ribbHqgc?si=51PMHPvxGu5VQRlQ" 
+                src="https://www.youtube.com/embed/G88ribbHqgc" 
                 frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                 allowfullscreen>
             </iframe>
         </div>
@@ -154,10 +126,9 @@
     <div id="logs">
         <div class="meca-card">
             <div class="timestamp"> [REGISTRO: <span class="auto-date"></span>] </div>
-            <h2 style="color: #fff;">O Café Néctar dos Deuses (Cap. 1)</h2>
+            <h2 style="color: #fff;">O Estagiário é Casca Grossa!</h2>
             <div class="content">
-                <p>Após a batalha contra o vilão Blogger e a perda de dados, o QG MECA GENIAL estava em silêncio. 
-                Sebastião sentia o peso da derrota, mas o cheiro do café do Mestre mudou tudo.</p>
+                <p>O Blogger tentou travar o sistema, mas a MECA GENIAL não para. Com o estagiário digital ajustando os códigos e o Mestre no comando do café, a soberania está garantida.</p>
             </div>
             <button class="btn-action" onclick="ouvir(this)">▶ REPRODUZIR ÁUDIO-LOG</button>
         </div>
@@ -166,24 +137,20 @@
 </div>
 
 <script>
-    // INJEÇÃO DE TEMPO: Atualiza a data e hora
     function setDates() {
         const agora = new Date();
         const texto = agora.toLocaleDateString('pt-BR') + " | " + agora.toLocaleTimeString('pt-BR');
         document.querySelectorAll('.auto-date').forEach(el => el.textContent = texto);
     }
 
-    // SINTETIZADOR DE VOZ: Lê o conteúdo para o Mestre
     function ouvir(btn) {
         const texto = btn.parentElement.querySelector('.content').innerText;
         window.speechSynthesis.cancel();
         const fala = new SpeechSynthesisUtterance(texto);
         fala.lang = 'pt-BR';
-        fala.rate = 1.0;
         window.speechSynthesis.speak(fala);
     }
 
-    // ACIONAMENTO AUTOMÁTICO
     setDates();
 </script>
 
