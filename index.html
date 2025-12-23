@@ -1,22 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8"> // Lição: Define que o site aceita acentos e cedilha.
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> // Lição: Faz o site caber na tela do celular.
-    <meta http-equiv="refresh" content="60"> // Lição: Dá um "tranco" no site a cada 60 segundos para atualizar sozinho.
-    
-    <title>MECA GENIAL - COMMAND CENTER</title>
+    <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <meta http-equiv="refresh" content="60"> <title>MECA GENIAL - COMMAND CENTER</title>
 
     <style>
-        /* ESTA PARTE ABAIXO É O "PAINEL DE CORES" DO MAVERICK (CSS) */
         :root {
-            --neon-green: #00ff00; /* Verde neon do sistema */
-            --warning-red: #ff0000; /* Vermelho de alerta */
-            --meca-gold: #f0c000;  /* Dourado oficial MECA GENIAL */
-            --bg-dark: #050505;    /* Preto asfalto do fundo */
+            --neon-green: #00ff00;
+            --warning-red: #ff0000;
+            --meca-gold: #f0c000;
+            --bg-dark: #050505;
         }
 
-        /* CONFIGURAÇÃO DO CORPO DO SITE */
         body {
             background-color: var(--bg-dark);
             color: var(--neon-green);
@@ -25,118 +19,130 @@
             line-height: 1.6;
         }
 
-        /* O CABEÇALHO (ONDE FICA O LOGO) */
         header {
             background: rgba(20, 20, 20, 0.95);
-            border-bottom: 2px solid var(--meca-gold); /* Linha dourada embaixo do topo */
+            border-bottom: 2px solid var(--meca-gold);
             padding: 1rem;
-            position: sticky; /* Faz o topo ficar parado mesmo se você rolar a página */
+            position: sticky;
             top: 0;
             z-index: 1000;
-            backdrop-filter: blur(10px); /* Efeito de vidro esfumaçado */
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        /* A LUZINHA QUE PISCA (LED OPERACIONAL) */
         .led {
             height: 10px; width: 10px; background: var(--neon-green);
             border-radius: 50%; display: inline-block; margin-right: 10px;
             box-shadow: 0 0 10px var(--neon-green);
-            animation: pulse 2s infinite; /* Chama a animação 'pulse' lá de baixo */
+            animation: pulse 2s infinite;
         }
 
-        /* O MONITOR ONDE PASSA O VÍDEO */
+        .main-engine {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
         .live-monitor {
             background: #000;
-            border: 1px solid var(--warning-red); /* Borda vermelha de perigo/atenção */
+            border: 1px solid var(--warning-red);
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 0 30px rgba(255, 0, 0, 0.1);
             margin-bottom: 40px;
         }
 
-        /* O CARTÃO DE TEXTO (REGISTRO DE LOG) */
+        .monitor-header {
+            background: var(--warning-red);
+            color: white;
+            padding: 5px 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
         .meca-card {
             background: rgba(255, 255, 255, 0.03);
-            border: 1px solid #222;
-            border-left: 4px solid var(--meca-gold); /* Faixa dourada na lateral esquerda */
+            border-left: 4px solid var(--meca-gold);
             padding: 25px;
-            border-radius: 4px;
             margin-bottom: 25px;
         }
 
-        /* ANIMAÇÃO DE PULSAR A LUZ */
+        .btn-action {
+            background: var(--meca-gold);
+            color: #000;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
         @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
     </style>
 </head>
 <body>
 
 <header>
-    // AQUI É A ÁREA DO LOGO E NOME
-    <div class="logo-area">
+    <div class="logo-area" style="display:flex; align-items:center; gap:15px;">
         <img src="https://cdn-icons-png.flaticon.com/512/603/603197.png" width="40" style="filter: invert(1);">
-        <h1 style="margin:0; font-size: 1.5rem; letter-spacing: 2px;">MECA GENIAL <span style="font-weight:100; color:#888;">| SYSTEM</span></h1>
+        <h1 style="margin:0; font-size: 1.5rem;">MECA GENIAL | SYSTEM</h1>
     </div>
     
-    // CAIXA DE STATUS (MOSTRA QUEM TÁ NO COMANDO)
-    <div class="status-box">
+    <div class="status-box" style="background:#1a1a1a; padding:5px 15px; border-radius:20px;">
         <span class="led"></span> OPERACIONAL: MAVERIK900CV
     </div>
 </header>
 
 <div class="main-engine">
     
-    // O MONITOR DE LIVE (O SEU CORAÇÃO DIGITAL)
     <div class="live-monitor">
         <div class="monitor-header">
-            <span>🔴 TRANSMISSÃO OFICIAL - MECA GENIAL</span>
-            <span>SINAL: SATÉLITE_GOOGLE_NANO</span>
+            <span>🔴 TRANSMISSÃO AO VIVO</span>
+            <span>SINAL: SATÉLITE_GOOGLE</span>
         </div>
         <div style="position: relative; padding-bottom: 56.25%; height: 0;">
-            // O IFRAME É A JANELA QUE TRÁZ O VÍDEO DO YOUTUBE PRA DENTRO
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/uTr4v4726w4?si=cvgPwnhrQLR65h-Z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe 
+                style="position: absolute; top:0; left:0; width:100%; height:100%;"
+                src="https://www.youtube.com/embed/uTr4v4726w4?autoplay=1&mute=1" 
+                frameborder="0" 
+                allowfullscreen>
+            </iframe>
         </div>
     </div>
 
-    // ÁREA DOS REGISTROS (A HISTÓRIA DO MANGÁ)
     <div id="logs">
         <div class="meca-card">
-            <div class="timestamp"> [REGISTRO: <span class="auto-date"></span>] </div>
+            <div style="color:var(--meca-gold); font-family:monospace;"> [REGISTRO: <span class="auto-date"></span>] </div>
             <h2 style="color: #fff;">O Estagiário é Casca Grossa!</h2>
             <div class="content">
-                <p>O Blogger tentou travar o sistema, mas a MECA GENIAL não para. Com o estagiário digital ajustando os códigos e o Mestre no comando do café, a soberania está garantida.</p>
+                <p>O Maverick 900CV está com o pé no porão. A MECA GENIAL não aceita menos que a perfeição.</p>
             </div>
-            // BOTÃO QUE ACIONA A VOZ DO SISTEMA
-            <button class="btn-action" onclick="ouvir(this)">▶ REPRODUZIR ÁUDIO-LOG</button>
+            <button class="btn-action" onclick="ouvir(this)">▶ REPRODUZIR ÁUDIO</button>
         </div>
     </div>
 
 </div>
 
 <script>
-    // ESTA PARTE É A "CENTRAL ELÉTRICA" (JAVASCRIPT) - FAZ AS COISAS FUNCIONAREM
-
-    // Função que pega a hora do seu computador e joga no site
+    // Lição: Parte mecânica (JavaScript)
     function setDates() {
         const agora = new Date();
-        const texto = agora.toLocaleDateString('pt-BR') + " | " + agora.toLocaleTimeString('pt-BR');
+        const texto = agora.toLocaleString('pt-BR');
         document.querySelectorAll('.auto-date').forEach(el => el.textContent = texto);
     }
 
-    // Função que transforma texto em voz (A voz da Gênia Malice ou do Gênio da Lâmpada)
     function ouvir(btn) {
         const texto = btn.parentElement.querySelector('.content').innerText;
-        window.speechSynthesis.cancel(); // Para o que estiver falando antes
+        window.speechSynthesis.cancel();
         const fala = new SpeechSynthesisUtterance(texto);
-        fala.lang = 'pt-BR'; // Define que a voz fala português do Brasil
-        window.speechSynthesis.speak(fala); // Dá a ordem de falar
+        fala.lang = 'pt-BR';
+        window.speechSynthesis.speak(fala);
     }
 
-    setDates(); // Dá a partida na função de data assim que o site carrega
+    setDates();
 </script>
 
 </body>
 </html>
-
